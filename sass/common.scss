@@ -30,6 +30,7 @@ body {
         background: #fff;
         border: 1px solid #e6e6e6;
         border-top: 0;
+
     }
     li {
         position: relative;
@@ -87,6 +88,7 @@ body {
                 }
                 .public-dropdown {
                     display: none;
+                    z-index: 999;
                     width: 290px;
                     left: -1px;
                     padding: 10px 15px;
@@ -229,6 +231,7 @@ body {
                     display: none;
                     width: 260px;
                     left: -1px;
+                    z-index: 999;
                     strong {
                         padding: 10px 10px 0;
                         color: #888;
@@ -322,6 +325,7 @@ body {
                     width: 240px;
                     box-sizing: border-box;
                     display: none;
+                    z-index: 999;
                     padding: 10px 15px 12px 15px;
                     p {
                         color: #888;
@@ -386,6 +390,7 @@ body {
                     left: -1020px;
                     padding: 25px 19px 25px 0;
                     display: none;
+                    z-index: 999;
                     dl {
                         float: left;
                         padding-left: 40px;
@@ -464,6 +469,7 @@ body {
                 .public-dropdown {
                     display: none;
                     right: -1px;
+                    z-index: 999;
                     a {
                         background: url(../img/ui.png) 0 -800px;
                         width: 130px;
@@ -514,7 +520,7 @@ body {
                 cursor: pointer;
                 .searchTypeList {
                     display: block;
-                    z-index: 1;
+                    
                 }
             }
             position: relative;
@@ -539,7 +545,9 @@ body {
         }
         .searchTypeList {
             display: none;
+
             width: 63px;
+            z-index: 999;
             position: absolute;
             left: -1px;
             border: 1px solid #DD00A7;
@@ -549,6 +557,8 @@ body {
                 line-height: 25px;
                 font-size: 14px;
                 padding-left: 10px;
+                background-color: #fff;
+                
                 &:hover {
                     cursor: pointer;
                     background-color: #F8F8F8;
