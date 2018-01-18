@@ -1,4 +1,4 @@
-//初始化样式
+//初始化样式 start
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0};
 body,button,input,select,textarea{font:12px/1.5 arial,"微软雅黑"};
 h1,h2,h3,h4,h5,h6{font-size:100%};
@@ -15,9 +15,9 @@ body {
 .clearfix,.wbox{*zoom:1}
 //版心宽度
 .wbox{width:1200px;margin:0 auto};
+//初始化样式  end
 
-//gome-top部分
-//gome-top主体部分
+//gome-top部分 start
 .gome-top {
     background: #f8f8f8;
     width: 100%;
@@ -55,8 +55,10 @@ body {
             height: 4px;
         }
     }
+    //gome-top主体部分
     #gome-top-body{
         height: 30px;
+//      左边部分
         .gome-top-left {
             line-height: 30px;
             float: left;
@@ -77,7 +79,6 @@ body {
                         }
                         i {
                            background-position: -55px -433px;
-                            
                         }
                     }
                     .public-dropdown {
@@ -163,6 +164,7 @@ body {
                     }
                 }
             }
+//          登录，注册会员
             #loginDiv-link {
                 a {
                     margin-right: 10px;
@@ -471,10 +473,147 @@ body {
                     }
                 }
             }
-            
         }
     }
 }
+//gome-top end
+
+//gome-head 头部搜索栏 start
+.gome-head{
+    padding: 30px 0;
+    background: pink;
+    position: relative;
+    box-sizing:border-box;
+    //用来引 精灵图
+    i {
+        background: url(../img/ui.png);
+        display: inline-block;
+        vertical-align: middle;
+    }
+    //logo部分
+    .logo {
+        float: left;
+        margin-right: 20px;
+        i {
+            width: 125px;
+            height: 55px;
+            background-position: -97px -1248px;
+        }
+    }
+    .logogif {
+        float: left;
+    }
+    //搜索（search）部分
+    .topSearch {
+        width: 500px;
+        float: left;
+        margin-left: 138px;
+        position: relative;
+        .searchType {
+            &:hover {
+                cursor: pointer;
+                .searchTypeList {
+                    display: block;
+                    z-index: 1;
+                }
+            }
+            position: relative;
+            width: 65px;
+            height: 32px;
+            border: 1px solid #DD00A7;
+            color: #a5a5a5;
+            line-height: 30px;
+            font-size: 14px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            float: left;
+            i {
+                width: 11px;
+                height: 7px;
+                position: absolute;
+                right: 9px;
+                top: 11px;
+                background-position: -145px -1469px;
+            }
+        }
+        .searchTypeList {
+            display: none;
+            width: 63px;
+            position: absolute;
+            left: -1px;
+            border: 1px solid #DD00A7;
+            border-top: 0;
+            float: left;
+            li {
+                line-height: 25px;
+                font-size: 14px;
+                padding-left: 10px;
+                &:hover {
+                    cursor: pointer;
+                    background-color: #F8F8F8;
+                }
+                a {
+                    color: #A5A5A5;
+                }
+            }
+        }
+        .searchInput {
+            width: 345px;
+            height: 32px;
+            border: 1px solid #DD00A7;
+            border-left: none;
+            outline: none;
+            padding-left: 5px;
+            box-sizing: border-box;
+            background: url(../img/voice.png) right center no-repeat;
+            background-size: 13px 19px;
+            float: left;
+            font-family: "微软雅黑";
+            color: #bbb;
+        }
+        .searchBtn {
+            width: 90px;
+            height: 32px;
+            background: #DD00A7;
+            color: #fff;
+            font-size: 16px;
+            border: 1px solid #DD00A7;
+            float: left;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .hotwords {
+            height: 25px;
+            padding-top: 6px;
+            a {
+                margin-right: 8px;
+                color: #a5a5a5;
+            }
+            .currentColor {
+                color: #DD00A7;
+            }
+        }
+    }
+    
+//  购物车
+    .shoopingCar {
+        position: absolute;
+        right: 0;
+        top: 32px;
+        z-index: 92;
+        width: 240px;
+        
+        background: skyblue;
+        .car {
+            
+        }
+    }
+    
+    
+}
+//gome-head 头部搜索栏 end
 
 
 
