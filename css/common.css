@@ -1,0 +1,363 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0; }
+
+body, button, input, select, textarea {
+  font: 12px/1.5 arial,"微软雅黑"; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; }
+
+em, i, u {
+  font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: none;
+  vertical-align: middle; }
+
+button, input, select, textarea {
+  font-size: 100%; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  height: 5000px; }
+
+.clearfix:after, .wbox:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix, .wbox {
+  *zoom: 1; }
+
+.wbox {
+  width: 1200px;
+  margin: 0 auto; }
+
+.gome-top {
+  background: #f8f8f8;
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid #f3f3f3; }
+  .gome-top .public-dropdown {
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-top: 0; }
+  .gome-top li {
+    position: relative; }
+  .gome-top a {
+    color: #888; }
+  .gome-top i {
+    background: url(../img/ui.png);
+    display: inline-block;
+    vertical-align: middle; }
+  .gome-top b {
+    font-weight: normal;
+    position: relative;
+    padding: 0 20px 0 10px; }
+    .gome-top b i {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      background-position: -62px -433px;
+      width: 7px;
+      height: 4px; }
+  .gome-top #gome-top-body {
+    height: 30px; }
+    .gome-top #gome-top-body .gome-top-left {
+      line-height: 30px;
+      float: left; }
+      .gome-top #gome-top-body .gome-top-left li {
+        float: left; }
+      .gome-top #gome-top-body .gome-top-left .gome-user {
+        margin-right: 12px;
+        border: 1px solid #f8f8f8; }
+        .gome-top #gome-top-body .gome-top-left .gome-user:hover {
+          background-color: #fff;
+          border-left: 1px solid #e6e6e6;
+          border-right: 1px solid #e6e6e6; }
+          .gome-top #gome-top-body .gome-top-left .gome-user:hover #loginDiv-name a {
+            color: #f5004b; }
+          .gome-top #gome-top-body .gome-top-left .gome-user:hover #loginDiv-name i {
+            background-position: -55px -433px; }
+          .gome-top #gome-top-body .gome-top-left .gome-user:hover .public-dropdown {
+            display: block; }
+        .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown {
+          display: none;
+          width: 290px;
+          left: -1px;
+          padding: 10px 15px; }
+          .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-name {
+            border-bottom: 1px solid #f3f3f3;
+            padding: 5px 0 20px; }
+            .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-name i {
+              background-position: 0 -337px;
+              width: 55px;
+              height: 55px;
+              float: left; }
+            .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-name p {
+              float: left;
+              color: #888;
+              margin: 15px 0 0 12px; }
+              .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-name p a {
+                color: #069; }
+          .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon {
+            position: relative; }
+            .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon p {
+              margin-top: 8px; }
+              .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon p a {
+                float: right; }
+            .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon .user-icon-prev {
+              position: absolute;
+              top: 54px;
+              width: 16px;
+              height: 29px;
+              cursor: pointer;
+              background: url(../img/ui.png) -60px -357px;
+              display: inline-block; }
+            .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon .user-icon-next {
+              right: 0;
+              position: absolute;
+              top: 54px;
+              width: 16px;
+              height: 29px;
+              cursor: pointer;
+              background: url(../img/ui.png) -76px -357px;
+              display: inline-block; }
+            .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon div {
+              position: relative;
+              width: 240px;
+              overflow: hidden;
+              margin: 10px 25px 0; }
+              .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon div ul {
+                height: 70px;
+                width: 720px; }
+                .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon div ul li {
+                  float: left;
+                  height: 40px;
+                  width: 80px;
+                  text-align: center; }
+                  .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon div ul li em {
+                    display: block;
+                    font-size: 40px;
+                    line-height: 40px;
+                    color: #ccc; }
+                  .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown .user-icon div ul li span {
+                    color: #ccc; }
+      .gome-top #gome-top-body .gome-top-left #loginDiv-link a {
+        margin-right: 10px; }
+      .gome-top #gome-top-body .gome-top-left #loginDiv-link .gome-register {
+        color: #f5004b; }
+        .gome-top #gome-top-body .gome-top-left #loginDiv-link .gome-register i {
+          display: inline-block;
+          width: 12px;
+          height: 13px;
+          background-position: -145px -1496px;
+          margin-left: 5px;
+          margin-top: -4px;
+          background-repeat: no-repeat; }
+    .gome-top #gome-top-body .gome-top-right {
+      float: right; }
+      .gome-top #gome-top-body .gome-top-right li {
+        line-height: 30px;
+        float: left; }
+      .gome-top #gome-top-body .gome-top-right .gome-link:hover a {
+        color: #F5004B; }
+      .gome-top #gome-top-body .gome-top-right .gome-link a {
+        margin-right: 10px; }
+      .gome-top #gome-top-body .gome-top-right .gome-link .caigou {
+        margin-left: 10px; }
+      .gome-top #gome-top-body .gome-top-right .my-gome {
+        border: 1px solid #f8f8f8; }
+        .gome-top #gome-top-body .gome-top-right .my-gome:hover {
+          background-color: #fff;
+          border-left: 1px solid #e6e6e6;
+          border-right: 1px solid #e6e6e6; }
+          .gome-top #gome-top-body .gome-top-right .my-gome:hover b a {
+            color: #f5004b; }
+          .gome-top #gome-top-body .gome-top-right .my-gome:hover b i {
+            background-position: -55px -433px; }
+          .gome-top #gome-top-body .gome-top-right .my-gome:hover .public-dropdown {
+            display: block; }
+        .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown {
+          display: none;
+          width: 260px;
+          left: -1px; }
+          .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown strong {
+            padding: 10px 10px 0;
+            color: #888; }
+            .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown strong a {
+              color: #069; }
+          .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-order {
+            overflow: hidden;
+            padding: 10px;
+            padding-top: 0px;
+            padding-bottom: 12px; }
+            .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-order li {
+              font-family: "微软雅黑";
+              line-height: 25px;
+              width: 110px; }
+              .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-order li a:hover {
+                color: #F5004B;
+                cursor: pointer; }
+          .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-coupon {
+            border-top: 1px solid #f3f3f3;
+            overflow: hidden; }
+            .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-coupon li {
+              padding: 0 15px; }
+              .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-coupon li a:hover {
+                color: #F5004B; }
+            .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-coupon .space {
+              width: 1px;
+              height: 12px;
+              background: #F3F3F3;
+              padding: 0;
+              margin-top: 8px; }
+          .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown p {
+            padding: 8px;
+            background: #F8F8F8; }
+          .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-track {
+            overflow: hidden;
+            background: #F8F8F8;
+            padding: 0 0 8px 10px; }
+            .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown .mygome-track li {
+              float: left;
+              width: 50px;
+              height: 50px;
+              margin: 0 12px 10px 0;
+              background: url(../img/ui.png) 0 -397px; }
+      .gome-top #gome-top-body .gome-top-right .gome-service {
+        border: 1px solid #f8f8f8; }
+        .gome-top #gome-top-body .gome-top-right .gome-service:hover {
+          background-color: #fff;
+          border-left: 1px solid #e6e6e6;
+          border-right: 1px solid #e6e6e6; }
+          .gome-top #gome-top-body .gome-top-right .gome-service:hover b a {
+            color: #f5004b; }
+          .gome-top #gome-top-body .gome-top-right .gome-service:hover b i {
+            background-position: -55px -433px; }
+          .gome-top #gome-top-body .gome-top-right .gome-service:hover .public-dropdown {
+            display: block; }
+        .gome-top #gome-top-body .gome-top-right .gome-service em {
+          font-size: 15px;
+          color: #dd00a7;
+          line-height: 30px; }
+        .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown {
+          left: -1px;
+          width: 240px;
+          box-sizing: border-box;
+          display: none;
+          padding: 10px 15px 12px 15px; }
+          .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown p {
+            color: #888;
+            font-weight: 700;
+            line-height: 25px; }
+            .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown p a:hover {
+              color: #F5004B;
+              cursor: pointer; }
+          .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown ul {
+            overflow: hidden;
+            padding-bottom: 10px; }
+            .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown ul li {
+              float: left;
+              width: 69px;
+              line-height: 25px; }
+              .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown ul li a:hover {
+                color: #F5004B;
+                cursor: pointer; }
+          .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown .online-service {
+            display: block;
+            text-align: center;
+            color: #fff;
+            background: #DD00A7; }
+            .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown .online-service em {
+              color: #fff; }
+      .gome-top #gome-top-body .gome-top-right .gome-webnav {
+        border: 1px solid #f8f8f8; }
+        .gome-top #gome-top-body .gome-top-right .gome-webnav:hover {
+          background-color: #fff;
+          border-left: 1px solid #e6e6e6;
+          border-right: 1px solid #e6e6e6; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav:hover b a {
+            color: #f5004b; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav:hover b i {
+            background-position: -55px -433px; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav:hover .public-dropdown {
+            display: block; }
+        .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown {
+          width: 1198px;
+          left: -1020px;
+          padding: 25px 19px 25px 0;
+          display: none; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dl {
+            float: left;
+            padding-left: 40px;
+            padding-right: 15px;
+            border-left: 1px solid #f3f3f3; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown .none {
+            padding-left: 40px;
+            padding-right: 15px; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dt {
+            font-size: 14px;
+            font-weight: 700;
+            color: #5e5e5e;
+            padding-bottom: 10px; }
+          .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul {
+            width: 74px;
+            float: left; }
+            .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul li {
+              float: left;
+              width: 74px;
+              line-height: 25px; }
+              .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul li a {
+                color: #888; }
+                .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul li a:hover {
+                  color: #F5004B;
+                  cursor: pointer; }
+              .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul li i {
+                width: 11px;
+                height: 14px;
+                margin: -16px 0 0 2px; }
+              .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul li .hot {
+                background-position: 0 -452px; }
+              .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dd ul li .new {
+                background-position: -20px -452px; }
+      .gome-top #gome-top-body .gome-top-right .gome-phone {
+        border: 1px solid #f8f8f8; }
+        .gome-top #gome-top-body .gome-top-right .gome-phone:hover {
+          background-color: #fff;
+          border-left: 1px solid #e6e6e6;
+          border-right: 1px solid #e6e6e6; }
+          .gome-top #gome-top-body .gome-top-right .gome-phone:hover b a {
+            color: #f5004b; }
+          .gome-top #gome-top-body .gome-top-right .gome-phone:hover b i {
+            background-position: -55px -433px; }
+          .gome-top #gome-top-body .gome-top-right .gome-phone:hover .public-dropdown {
+            display: block; }
+        .gome-top #gome-top-body .gome-top-right .gome-phone em {
+          font-size: 15px;
+          color: #dd00a7;
+          line-height: 30px; }
+        .gome-top #gome-top-body .gome-top-right .gome-phone .public-dropdown {
+          display: none;
+          right: -1px; }
+          .gome-top #gome-top-body .gome-top-right .gome-phone .public-dropdown a {
+            background: url(../img/ui.png) 0 -800px;
+            width: 130px;
+            height: 170px;
+            display: block;
+            margin: 15px; }

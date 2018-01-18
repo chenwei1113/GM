@@ -15,6 +15,10 @@ gulp.task("sassfile",function(){
 		.pipe(sass())
 		.pipe(gulp.dest("D:\\phpStudy\\WWW\\GM\\css"));
 });
+gulp.task("copy-font",function(){
+	gulp.src("font/**/*")
+		.pipe(gulp.dest("D:\\phpStudy\\WWW\\GM\\font"));
+});
 gulp.task("sassfilelocal",function(){
 	gulp.src("sass/**/*")
 		.pipe(sass())
@@ -25,5 +29,6 @@ gulp.task("watchall",function(){
 	gulp.watch("*.html",["copy-html"]);
 	gulp.watch("img/**/*",["copy-img"]);
 	gulp.watch("sass/**/*",["sassfile"]);
+	gulp.watch("font/**/*",["copy-font"]);
 	gulp.watch("sass/**/*",["sassfilelocal"]);
 });

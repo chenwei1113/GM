@@ -1,0 +1,503 @@
+//初始化样式
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0};
+body,button,input,select,textarea{font:12px/1.5 arial,"微软雅黑"};
+h1,h2,h3,h4,h5,h6{font-size:100%};
+em,i,u{font-style:normal};
+ol,ul{list-style:none};
+a{text-decoration:none};
+img{border:none;vertical-align:middle};
+button,input,select,textarea{font-size:100%};
+table{border-collapse:collapse;border-spacing:0}; 
+body {
+    height: 5000px;
+}
+.clearfix:after,.wbox:after{content:".";display:block;height:0;clear:both;visibility:hidden};
+.clearfix,.wbox{*zoom:1}
+//版心宽度
+.wbox{width:1200px;margin:0 auto};
+
+//gome-top部分
+//gome-top主体部分
+.gome-top {
+    background: #f8f8f8;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #f3f3f3;
+    //隐藏的盒子的公共样式
+    .public-dropdown {
+        position: absolute;
+        top: 30px;
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-top: 0;
+    }
+    li {
+        position: relative;
+    }
+    a {
+        color: #888;
+    }
+    i {
+        background: url(../img/ui.png);
+        display: inline-block;
+        vertical-align: middle;
+    }
+    b{  
+        font-weight: normal;
+        position: relative;
+        padding: 0 20px 0 10px;
+        i{
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            background-position: -62px -433px;
+            width: 7px;
+            height: 4px;
+        }
+    }
+    #gome-top-body{
+        height: 30px;
+        .gome-top-left {
+            line-height: 30px;
+            float: left;
+            li {
+                float: left;
+            }
+//          国美会员
+            .gome-user {
+                margin-right: 12px;
+                border: 1px solid #f8f8f8;
+                &:hover {
+                    background-color: #fff;
+                    border-left: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    #loginDiv-name{
+                        a{
+                            color: #f5004b;
+                        }
+                        i {
+                           background-position: -55px -433px;
+                            
+                        }
+                    }
+                    .public-dropdown {
+                        display: block;
+                    }
+                }
+                .public-dropdown {
+                    display: none;
+                    width: 290px;
+                    left: -1px;
+                    padding: 10px 15px;
+                    .user-name {
+                        border-bottom: 1px solid #f3f3f3;
+                        padding: 5px 0 20px;
+                        i {
+                            background-position: 0 -337px;
+                            width: 55px;
+                            height: 55px;
+                            float: left;
+                        }
+                        p {
+                            float: left;
+                            color: #888;
+                            margin: 15px 0 0 12px; 
+                            a {
+                                color: #069;
+                            }
+                        }
+                    }
+                    .user-icon {
+                        position: relative;
+                        p {
+                            margin-top: 8px;
+                            a {
+                                float: right;
+                            }
+                        }
+                        .user-icon-prev {
+                            position: absolute;
+                            top: 54px;
+                            width: 16px;
+                            height: 29px;
+                            cursor: pointer;
+                            background: url(../img/ui.png) -60px -357px;
+                            display: inline-block;
+                        }
+                        .user-icon-next {
+                            right: 0;
+                            position: absolute;
+                            top: 54px;
+                            width: 16px;
+                            height: 29px;
+                            cursor: pointer;
+                            background: url(../img/ui.png) -76px -357px;
+                            display: inline-block;
+                        }
+                        div {
+                            position: relative;
+                            width: 240px;
+                            overflow: hidden;
+                            margin: 10px 25px 0;
+                            
+                            ul {
+                                height: 70px;
+                                width: 720px;
+                                li {
+                                    float: left;
+                                    height: 40px;
+                                    width: 80px;
+                                    text-align: center;
+                                    em{
+                                        display: block;
+                                        font-size: 40px;
+                                        line-height: 40px;
+                                        color: #ccc;
+                                    }
+                                    span {
+                                        color: #ccc;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #loginDiv-link {
+                a {
+                    margin-right: 10px;
+                }
+                .gome-register{
+                    color: #f5004b;
+                    i {
+                        display: inline-block;
+                        width: 12px;
+                        height: 13px;
+                        background-position: -145px -1496px;
+                        margin-left: 5px;
+                        margin-top: -4px;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+        //右边部分
+        .gome-top-right {
+            float: right;
+            li {
+                line-height: 30px;
+                float: left;
+            }
+            //企业采购
+            .gome-link {
+                &:hover {
+                    a {
+                        color: #F5004B;
+                    }
+                }
+                a {
+                    margin-right: 10px;
+                }
+                .caigou {
+                    margin-left: 10px;
+                }
+            }
+//          我的国美
+            .my-gome {
+                border: 1px solid #f8f8f8;
+                &:hover {
+                    background-color: #fff;
+                    border-left: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    b {
+                        a{
+                            color: #f5004b;
+                        }
+                        i {
+                           background-position: -55px -433px;
+                            
+                        }
+                    }
+                    .public-dropdown {
+                        display: block;
+                    }
+                }
+                //隐藏的盒子
+                .public-dropdown {
+                    display: none;
+                    width: 260px;
+                    left: -1px;
+                    strong {
+                        padding: 10px 10px 0;
+                        color: #888;
+                        a {
+                            color: #069;
+                        }
+                    }
+                    .mygome-order{
+                        overflow: hidden;
+                        padding: 10px;
+                        padding-top: 0px;
+                        padding-bottom: 12px;
+                        li {
+                            font-family: "微软雅黑";
+                            line-height: 25px;
+                            width:110px;
+                            a {
+                                &:hover {
+                                    color: #F5004B;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    .mygome-coupon {
+                        border-top: 1px solid #f3f3f3;
+                        overflow: hidden;
+                        li {
+                            padding: 0 15px;
+                            a {
+                                &:hover {
+                                    color: #F5004B;
+                                }
+                            }
+                        }
+                        .space {
+                            width: 1px;
+                            height: 12px;
+                            background: #F3F3F3;
+                            padding: 0;
+                            margin-top: 8px;
+                        }
+                    }
+                    p {
+                        padding: 8px;
+                        background: #F8F8F8;
+                    }
+                    .mygome-track {
+                        overflow: hidden;
+                        background: #F8F8F8;
+                        padding: 0 0 8px 10px;
+                        li {
+                            float: left;
+                            width: 50px;
+                            height: 50px;
+                            margin: 0 12px 10px 0;
+                            background: url(../img/ui.png) 0 -397px;
+                        }
+                    }
+                }
+                
+            }
+            //服务中心
+            .gome-service {
+                border: 1px solid #f8f8f8;
+                &:hover {
+                    background-color: #fff;
+                    border-left: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    b {
+                        a{
+                            color: #f5004b;
+                        }
+                        i {
+                           background-position: -55px -433px;
+                            
+                        }
+                    }
+                    .public-dropdown {
+                        display: block;
+                    }
+                }
+                em {
+                    font-size: 15px;
+                    color: #dd00a7;
+                    line-height: 30px;
+                }
+                //隐藏的盒子
+                .public-dropdown {
+                    left: -1px;
+                    width: 240px;
+                    box-sizing: border-box;
+                    display: none;
+                    padding: 10px 15px 12px 15px;
+                    p {
+                        color: #888;
+                        font-weight: 700;
+                        line-height: 25px;
+                        a {
+                            &:hover {
+                                color: #F5004B;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    ul {
+                        overflow: hidden;
+                        padding-bottom: 10px;
+                        li {
+                            float: left;
+                            width: 69px;
+                            line-height: 25px;
+                            a {
+                                &:hover {
+                                    color: #F5004B;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    .online-service {
+                        em {
+                            color: #fff;
+                        }
+                        display: block;
+                        text-align: center;
+                        color: #fff;
+                        background: #DD00A7;
+                    }
+                }
+            }
+            //网站导航
+            .gome-webnav {
+                border: 1px solid #f8f8f8;
+                &:hover {
+                    background-color: #fff;
+                    border-left: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    b {
+                        a{
+                            color: #f5004b;
+                        }
+                        i {
+                           background-position: -55px -433px;
+                            
+                        }
+                    }
+                    .public-dropdown {
+                        display: block;
+                    }
+                }
+                //隐藏的盒子
+                .public-dropdown {
+                    width: 1198px;
+                    left: -1020px;
+                    padding: 25px 19px 25px 0;
+                    display: none;
+                    dl {
+                        float: left;
+                        padding-left: 40px;
+                        padding-right: 15px;
+                        border-left: 1px solid #f3f3f3;
+                    }
+                    .none {
+                        padding-left: 40px;
+                        padding-right: 15px;
+                    }
+                    dt {
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: #5e5e5e;
+                        padding-bottom: 10px;
+                    }
+                    dd {
+                        ul {
+                            width: 74px;
+                            float: left;
+                            li {
+                                float: left;
+                                width: 74px;
+                                line-height: 25px;
+                                a {
+                                    color: #888;
+                                    &:hover {
+                                        color: #F5004B;
+                                        cursor: pointer;
+                                    }
+                                }
+                                i {
+                                    width: 11px;
+                                    height: 14px;
+                                    margin: -16px 0 0 2px;
+                                }
+                                .hot {
+                                    background-position: 0 -452px;
+                                }
+                                .new {
+                                    background-position: -20px -452px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            //手机国美
+            .gome-phone {
+                border: 1px solid #f8f8f8;
+                &:hover {
+                    background-color: #fff;
+                    border-left: 1px solid #e6e6e6;
+                    border-right: 1px solid #e6e6e6;
+                    b {
+                        a{
+                            color: #f5004b;
+                        }
+                        i {
+                           background-position: -55px -433px;
+                            
+                        }
+                    }
+                    .public-dropdown {
+                        display: block;
+                    }
+                }
+                em {
+                    font-size: 15px;
+                    color: #dd00a7;
+                    line-height: 30px;
+                    
+                }
+                //隐藏的盒子
+                .public-dropdown {
+                    display: none;
+                    right: -1px;
+                    a {
+                        background: url(../img/ui.png) 0 -800px;
+                        width: 130px;
+                        height: 170px;
+                        display: block;
+                        margin: 15px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//头部样式
+.gome-top {
+    
+}
