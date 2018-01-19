@@ -98,6 +98,7 @@ body {
             display: block; }
         .gome-top #gome-top-body .gome-top-left .gome-user .public-dropdown {
           display: none;
+          z-index: 999;
           width: 290px;
           left: -1px;
           padding: 10px 15px; }
@@ -196,7 +197,8 @@ body {
         .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown {
           display: none;
           width: 260px;
-          left: -1px; }
+          left: -1px;
+          z-index: 999; }
           .gome-top #gome-top-body .gome-top-right .my-gome .public-dropdown strong {
             padding: 10px 10px 0;
             color: #888; }
@@ -261,6 +263,7 @@ body {
           width: 240px;
           box-sizing: border-box;
           display: none;
+          z-index: 999;
           padding: 10px 15px 12px 15px; }
           .gome-top #gome-top-body .gome-top-right .gome-service .public-dropdown p {
             color: #888;
@@ -302,7 +305,8 @@ body {
           width: 1198px;
           left: -1020px;
           padding: 25px 19px 25px 0;
-          display: none; }
+          display: none;
+          z-index: 999; }
           .gome-top #gome-top-body .gome-top-right .gome-webnav .public-dropdown dl {
             float: left;
             padding-left: 40px;
@@ -354,7 +358,8 @@ body {
           line-height: 30px; }
         .gome-top #gome-top-body .gome-top-right .gome-phone .public-dropdown {
           display: none;
-          right: -1px; }
+          right: -1px;
+          z-index: 999; }
           .gome-top #gome-top-body .gome-top-right .gome-phone .public-dropdown a {
             background: url(../img/ui.png) 0 -800px;
             width: 130px;
@@ -364,7 +369,6 @@ body {
 
 .gome-head {
   padding: 30px 0;
-  background: pink;
   position: relative;
   box-sizing: border-box; }
   .gome-head i {
@@ -400,8 +404,7 @@ body {
       .gome-head .topSearch .searchType:hover {
         cursor: pointer; }
         .gome-head .topSearch .searchType:hover .searchTypeList {
-          display: block;
-          z-index: 1; }
+          display: block; }
       .gome-head .topSearch .searchType i {
         width: 11px;
         height: 7px;
@@ -412,6 +415,7 @@ body {
     .gome-head .topSearch .searchTypeList {
       display: none;
       width: 63px;
+      z-index: 999;
       position: absolute;
       left: -1px;
       border: 1px solid #DD00A7;
@@ -420,7 +424,8 @@ body {
       .gome-head .topSearch .searchTypeList li {
         line-height: 25px;
         font-size: 14px;
-        padding-left: 10px; }
+        padding-left: 10px;
+        background-color: #fff; }
         .gome-head .topSearch .searchTypeList li:hover {
           cursor: pointer;
           background-color: #F8F8F8; }
@@ -457,10 +462,201 @@ body {
         color: #a5a5a5; }
       .gome-head .topSearch .hotwords .currentColor {
         color: #DD00A7; }
-  .gome-head .shoopingCar {
+  .gome-head .shoppingCar {
     position: absolute;
     right: 0;
     top: 32px;
     z-index: 92;
     width: 240px;
+    width: 142px;
+    height: 39px;
     background: skyblue; }
+
+.subNav {
+  width: 100%;
+  height: 40px;
+  background: #f8f8f8; }
+  .subNav .wbox {
+    position: relative; }
+    .subNav .wbox .allgoods {
+      float: left;
+      width: 200px;
+      background: #f1f1f1;
+      font-size: 15px;
+      font-weight: 700;
+      color: #676767;
+      box-sizing: border-box;
+      padding-left: 15px;
+      line-height: 40px;
+      position: relative; }
+      .subNav .wbox .allgoods .navBox {
+        position: absolute;
+        width: 200px;
+        height: 450px;
+        left: 0;
+        top: 40px;
+        background: rgba(92, 92, 92, 0.5);
+        font-size: 14px; }
+        .subNav .wbox .allgoods .navBox ul {
+          position: relative;
+          z-index: 20; }
+        .subNav .wbox .allgoods .navBox li {
+          line-height: 30px;
+          padding-left: 16px;
+          width: 202px; }
+          .subNav .wbox .allgoods .navBox li a {
+            color: #fff;
+            font-weight: 200;
+            margin-right: 3px; }
+          .subNav .wbox .allgoods .navBox li:hover {
+            background-color: #fbfbfb; }
+            .subNav .wbox .allgoods .navBox li:hover a {
+              color: #000; }
+              .subNav .wbox .allgoods .navBox li:hover a:hover {
+                color: #f5004b; }
+        .subNav .wbox .allgoods .navBox .navItem {
+          position: absolute;
+          left: 200px;
+          top: 0;
+          width: 1000px;
+          z-index: 10;
+          display: none;
+          box-sizing: border-box;
+          padding: 20px 0 0 20px;
+          background-color: #fbfbfb;
+          border: 1px solid #818181;
+          border-top: none; }
+          .subNav .wbox .allgoods .navBox .navItem .fashion {
+            overflow: hidden;
+            padding-bottom: 10px; }
+            .subNav .wbox .allgoods .navBox .navItem .fashion a {
+              float: left;
+              margin-right: 10px;
+              color: #fff;
+              font-size: 2px;
+              line-height: 20px;
+              background: #f5004b;
+              padding-left: 8px;
+              padding-right: 5px;
+              font-weight: 700; }
+              .subNav .wbox .allgoods .navBox .navItem .fashion a i {
+                display: inline-block;
+                width: 5px;
+                height: 7px;
+                background: url(../img/ui.png) -70px -433px;
+                margin-left: 6px;
+                overflow: hidden; }
+          .subNav .wbox .allgoods .navBox .navItem .category {
+            overflow: hidden; }
+            .subNav .wbox .allgoods .navBox .navItem .category .title {
+              color: #5e5e5e;
+              font-size: 700;
+              width: 65px;
+              float: left;
+              line-height: 21px; }
+            .subNav .wbox .allgoods .navBox .navItem .category .list {
+              width: 700px;
+              border-top: 1px solid #f3f3f3;
+              float: left;
+              font-size: 12px;
+              line-height: 40px;
+              font-weight: 400; }
+              .subNav .wbox .allgoods .navBox .navItem .category .list div {
+                float: left; }
+              .subNav .wbox .allgoods .navBox .navItem .category .list .space {
+                width: 1px;
+                height: 12px;
+                background: #e0e0e0;
+                padding: 0;
+                margin-top: 14px; }
+              .subNav .wbox .allgoods .navBox .navItem .category .list a {
+                float: left;
+                margin: 0 7px;
+                color: #5e5e5e; }
+            .subNav .wbox .allgoods .navBox .navItem .category .current {
+              border-top: none; }
+          .subNav .wbox .allgoods .navBox .navItem .navItem-right {
+            width: 210px;
+            background: #fff;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0; }
+    .subNav .wbox .mainNav {
+      float: left; }
+      .subNav .wbox .mainNav .space {
+        width: 1px;
+        height: 15px;
+        background: #b2b2b2;
+        padding: 0;
+        margin-top: 12px; }
+      .subNav .wbox .mainNav .current a {
+        color: #f5004b; }
+      .subNav .wbox .mainNav li {
+        float: left;
+        font-size: 15px;
+        line-height: 40px;
+        padding: 0 12px; }
+        .subNav .wbox .mainNav li a {
+          color: #000; }
+          .subNav .wbox .mainNav li a:hover {
+            color: #f5004b; }
+      .subNav .wbox .mainNav .hot {
+        width: 11px;
+        height: 14px;
+        margin: -16px 0 0 2px;
+        background: url(../img/ui.png) 0 -452px; }
+    .subNav .wbox .sideRoll {
+      width: 200px;
+      height: 40px;
+      position: absolute;
+      right: 0;
+      overflow: hidden; }
+      .subNav .wbox .sideRoll .goUp, .subNav .wbox .sideRoll .goDown {
+        display: block;
+        position: absolute;
+        right: 2px;
+        width: 10px;
+        height: 9px;
+        border: 1px solid #e4e4e4;
+        background-color: #efefef;
+        text-align: center; }
+      .subNav .wbox .sideRoll .goUp {
+        top: 10px; }
+      .subNav .wbox .sideRoll .goDown {
+        bottom: 10px; }
+      .subNav .wbox .sideRoll i {
+        width: 9px;
+        height: 5px;
+        display: block;
+        background: url(../img/ui.png);
+        margin-top: 2px;
+        margin-left: 1px; }
+      .subNav .wbox .sideRoll .goTop {
+        background-position: -20px -1348px; }
+      .subNav .wbox .sideRoll .goBottom {
+        background-position: -20px -1353px; }
+
+.slideshow {
+  width: 100%;
+  height: 450px;
+  background: #e70f50; }
+  .slideshow #slideshow {
+    margin: 0 312px 0;
+    position: relative;
+    width: 750px;
+    height: 450px; }
+  .slideshow #leftArrow, .slideshow #rightArrow {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-50%);
+    background: rgba(180, 180, 180, 0.4);
+    font-size: 30px; }
+  .slideshow #leftArrow {
+    left: 0px; }
+  .slideshow #rightArrow {
+    right: 0px; }

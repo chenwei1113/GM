@@ -219,7 +219,6 @@ body {
                         }
                         i {
                            background-position: -55px -433px;
-                            
                         }
                     }
                     .public-dropdown {
@@ -470,6 +469,7 @@ body {
                     display: none;
                     right: -1px;
                     z-index: 999;
+                    
                     a {
                         background: url(../img/ui.png) 0 -800px;
                         width: 130px;
@@ -487,7 +487,7 @@ body {
 //gome-head 头部搜索栏 start
 .gome-head{
     padding: 30px 0;
-    background: pink;
+    //background: pink;
     position: relative;
     box-sizing:border-box;
     //用来引 精灵图
@@ -606,24 +606,261 @@ body {
             }
         }
     }
-    
-//  购物车
-    .shoopingCar {
+
+    //购物车部分
+    .shoppingCar {
         position: absolute;
         right: 0;
         top: 32px;
         z-index: 92;
         width: 240px;
-        
+        width: 142px;
+        height: 39px;
         background: skyblue;
-        .car {
-            
-        }
     }
-    
-    
 }
 //gome-head 头部搜索栏 end
+
+// 子导航start
+.subNav {
+    width: 100%;
+    height: 40px;
+    background: #f8f8f8;
+    .wbox {
+        position: relative;
+        .allgoods {
+            float: left;
+            width: 200px;
+            background: #f1f1f1;
+            font-size: 15px;
+            font-weight: 700;
+            color: #676767;
+            box-sizing: border-box;
+            padding-left: 15px;
+            line-height: 40px;
+            position: relative;
+            .navBox {
+                position: absolute;
+                width: 200px;
+                height: 450px;
+                left: 0;
+                top: 40px;
+                background: rgba(92,92,92,0.5);
+                font-size: 14px;
+                ul {
+                    position: relative;
+                    z-index: 20;
+                }
+                li {
+                    line-height: 30px;
+                    padding-left: 16px;
+                    width: 202px;
+                    a {
+                        color: #fff;
+                        font-weight: 200;
+                        margin-right: 3px;
+                    }
+                    &:hover {
+                        background-color: #fbfbfb;
+                        a {
+                            color: #000;
+                            &:hover {
+                                color: #f5004b;
+                            }
+                        }
+                    }
+                }
+                .navItem {
+                    position: absolute;
+                    left: 200px;
+                    top: 0;
+                    width: 1000px;
+                    z-index: 10;
+                    display: none;
+                    box-sizing: border-box;
+                    padding: 20px 0 0 20px;
+                    background-color: #fbfbfb;
+                    border: 1px solid #818181;
+                    border-top: none;
+                    .fashion {
+                        overflow: hidden;
+                        padding-bottom: 10px;
+                        a {
+                            float: left;
+                            margin-right: 10px;
+                            color: #fff;
+                            font-size: 2px;
+                            line-height: 20px;
+                            background: #f5004b;
+                            padding-left: 8px;
+                            padding-right: 5px;
+                            font-weight: 700;
+                            i {
+                                display: inline-block;
+                                width: 5px;
+                                height: 7px;
+                                background: url(../img/ui.png) -70px -433px;
+                                margin-left: 6px;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                    .category {
+                        overflow: hidden;
+                        .title {
+                            color: #5e5e5e;
+                            font-size: 700;
+                            width: 65px;
+                            float: left;
+                            line-height: 21px;
+                        }
+                        .list {
+                            width: 700px;
+                            border-top: 1px solid #f3f3f3;
+                            float: left;
+                            font-size: 12px;
+                            line-height: 40px;
+                            font-weight: 400;
+                            div {
+                                float: left;
+                            }
+                            .space {
+                                width: 1px;
+                                height: 12px;
+                                background: #e0e0e0;
+                                padding: 0;
+                                margin-top: 14px;
+                            }
+                            a {
+                                float: left;
+                                margin: 0 7px;
+                                color: #5e5e5e;
+                            }
+                        }
+                        .current {
+                            border-top: none;
+                        }
+                    }
+                    .navItem-right {
+                        width: 210px;
+                        background: #fff;
+                        height: 100%;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+        // 主导航
+        .mainNav {
+            float: left;
+            .space {
+                width: 1px;
+                height: 15px;
+                background: #b2b2b2;
+                padding: 0;
+                margin-top: 12px;
+            }
+            .current {
+                a {
+                    color: #f5004b;
+                }
+                
+            }
+            li {
+                float: left;
+                font-size: 15px;
+                line-height: 40px;
+                padding: 0 12px;
+                a {
+                    color: #000;
+                    &:hover {
+                        color: #f5004b;
+                    }
+                }
+            }
+            .hot {
+                width: 11px;
+                height: 14px;
+                margin: -16px 0 0 2px;
+                background: url(../img/ui.png) 0 -452px;
+            }
+        }
+        .sideRoll {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            right: 0;
+            overflow: hidden;
+            .goUp,.goDown {
+                display: block;
+                position: absolute;                
+                right: 2px;
+                width: 10px;
+                height: 9px;
+                border: 1px solid #e4e4e4;
+                background-color: #efefef;
+                text-align: center;
+            }
+            .goUp {
+                top: 10px;
+            }
+            .goDown {
+                bottom: 10px;
+            }
+            i {
+                width: 9px;
+                height: 5px;
+                display: block;
+                background: url(../img/ui.png);
+                margin-top: 2px;
+                margin-left: 1px;
+            }
+            .goTop {                
+                background-position: -20px -1348px;
+            }
+            .goBottom {                
+                background-position: -20px -1353px;
+            }
+
+        }
+    }
+}
+
+//轮播图
+.slideshow {
+    width: 100%;
+    height: 450px;
+    background: #e70f50;
+    #slideshow {
+        margin: 0 312px 0;
+        position:relative;
+        width: 750px;
+        height: 450px;
+    }
+    #leftArrow,#rightArrow{
+        position: absolute;
+        top:50%;
+        width: 30px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        transform: translateY(-50%);
+        background: rgba(180,180,180,0.4);
+        font-size: 30px;
+    }
+    #leftArrow{
+        left:0px;
+    }
+    #rightArrow{
+        right:0px;
+    }
+}
+
+
+        
+
 
 
 
