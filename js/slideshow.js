@@ -7,6 +7,7 @@
 		this.timeSpace = $obj.timeSpace;
 		this.btnColor = $obj.btnColor;
 		this.btnHighColor = $obj.btnHighColor;
+		
 		this.btnWidth = $obj.btnWidth;
 		this.btnHeight = $obj.btnHeight;
 		this.imgs = $obj.imgs;
@@ -55,8 +56,8 @@
 			$(this.boxDom).find("ul").eq(0).find("li").eq(0).css({"backgroundColor":that.btnHighColor});
 
 			//箭头
-			$("#leftArrow").css("display","none");
-			$("#rightArrow").css("display","none");
+			$(".leftArrow").css("display","none");
+			$(".rightArrow").css("display","none");
 		};
 
 		//自动播放
@@ -105,31 +106,31 @@
 		this.initEvent = function(){
 			var that = this;
 			$(this.boxDom).mouseenter(function(){
-				$("#leftArrow").css("display","block");
-				$("#rightArrow").css("display","block");
+				$(".leftArrow").css("display","block");
+				$(".rightArrow").css("display","block");
 				that.stopPlay();
 			});
 			$(this.boxDom).mouseleave(function(){
-				$("#leftArrow").css("display","none");
-				$("#rightArrow").css("display","none");
+				$(".leftArrow").css("display","none");
+				$(".rightArrow").css("display","none");
 				that.autoPlay();
 			});
 			$(this.boxDom).find("ul").find("li").click(function(){
 				that.goImg($(this).index());
 			});
-			$("#leftArrow").mouseover(function(){
+			$(".leftArrow").mouseover(function(){
 				$(this).css("cursor","pointer");
 			});
-			$("#rightArrow").mouseover(function(){
+			$(".rightArrow").mouseover(function(){
 				$(this).css("cursor","pointer");
 			});
-			$("#leftArrow").click(function(){
+			$(".leftArrow").click(function(){
 				let transOrd = that.ord-1;
 				$imgs = $(that.boxDom).find("img");
 				transOrd = transOrd<0?$imgs.length-1:transOrd;
 				that.goImg(transOrd);
 			});
-			$("#rightArrow").click(function(){
+			$(".rightArrow").click(function(){
 				let transOrd = that.ord+1;
 				$imgs = $(that.boxDom).find("img");
 				transOrd = transOrd>$imgs.length-1?0:transOrd;

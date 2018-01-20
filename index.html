@@ -8,6 +8,31 @@
 	<link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
+	<!-- 电梯导航 部分 start-->
+	<div class="elevator" id="elevator">
+		<div class="fl_nav">楼层导航</div>
+		<ul>
+		</ul>
+		<ul class="fl_goto">
+			<li class="fl_top"><a href="#"></a></li>
+			<li class="fl_bottom"><a href="#"></a></li>
+		</ul>
+	</div>
+	<!-- 电梯导航 部分 end -->
+	<!-- 侧边导航 start -->
+	<div id="gome-bar">
+		<ul class="gomt-bar-top">
+			<li>
+				
+			</li>
+		</ul>
+		<ul class="gomt-bar-bottom">
+			<li></li>
+		</ul>
+		
+	</div>
+	<!-- 侧边导航 end -->
+
 	<!-- gome-topad 导航部分-->
 	<div class="gome-top">
 		<div id="gome-top-body" class="wbox">
@@ -326,6 +351,7 @@
 		</div>
 	</div>
 	<!--导航部分 end-->
+
 	<!--head 头部搜索 start-->
 	<div class="gome-head wbox">
 		<!--logo-->
@@ -4049,58 +4075,718 @@
 			<!--<ul id="btns">-->
 				<!--放小圆点的-->
 			<!--</ul>-->
-			<div id="leftArrow" >＜</div>
-			<div id="rightArrow">＞</div>
+			<div class="leftArrow" >＜</div>
+			<div class="rightArrow">＞</div>
 		</div>
 	</div>
 
 	<!-- 淘  购  逛 部分 -->
 	<div class="tao wbox">
 		<div class="taobox">
-			<div class="tao-title">淘</div>	
+			<div class="tao-title"><h2></h2><span>BARGAINS</span></div>	
 			<div class="tao-body">
+
 			</div>
 		</div>
 		<div class="taobox">
-			<div class="tao-title">购</div>	
+			<div class="tao-title"><h2></h2><span>FASHION</span></div>	
 			<div class="tao-body">
 				
 			</div>
 		</div>
 		<div class="taobox">
-			<div class="tao-title">逛</div>	
-			<div class="tao-body">
-				
+			<div class="tao-title"><h2></h2><span>BRANDS</span></div>	
+			<div class="tao-body-last">
+				<div class="last-l">
+					<img src="img/guang1.jpeg" alt="">
+					<img src="img/guang2.jpeg" alt="">
+				</div>	
+				<div class="last-r">
+					<img src="img/guang3.jpeg" alt="">
+					<img src="img/guang4.jpg" alt="">
+					<img src="img/guang5.png" alt="">
+					<img src="img/guang6.jpg" alt="">
+					<img src="img/guang7.jpeg" alt="">
+					<img src="img/guang8.jpeg" alt="">
+				</div>
+
 			</div>
 		</div>
 		
 	</div>
 	<!-- 领券中心 -->
-	<div class="quanCenter wbox">
-		领券中心
+	<div class="quanCenter wbox" id="quanCenter">
+		
 	</div>
 	<!-- 金融部分 -->
 	<div class="finance wbox">
-		<div class="finance-title">金融部分</div>
-		<div class="finance-body"></div>
+		<div class="finance-title"><h2>金融</h2><span>FINANCE</span></div>
+		<div class="finance-body">
+			<div class="f_m_l">
+				<span href="#" class="pindao">金融频道  ></span>
+			</div>			
+		</div>
 	</div>
 
 	<!-- 1楼 -->
-	<div class="floor wbox">
+	<div id="firstFloor">
+		<div class="floor wbox">
 		<div class="floor-top">
-			<div class="title">1F 手机通讯</div>
+			<div class="title">1F  手机通讯</div>
 			<div class="tab">
-				<ul></ul>
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="floor-body">
-			<div class="floor-body-left"></div>
-			<div class="floor-body-main"></div>
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
 		</div>
 	</div>
-
+	<!-- 2楼 -->
+	<div id="secondFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">2F  电脑数码</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 3楼 -->
+	<div id="thirdFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">3F  家用电器</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 4楼 -->
+	<div id="fourFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">4F  厨房卫浴</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 5楼 -->
+	<div id="fiveFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">5F  国美超市</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 6楼 -->
+	<div id="sixFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">6F  服饰鞋包</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 7楼 -->
+	<div id="sevenFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">7F  家居家装</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 8楼 -->
+	<div id="eightFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">8F  汽车用品</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 9楼 -->
+	<div id="nineFloor">
+		<div class="floor wbox">
+		<div class="floor-top">
+			<div class="title">9F  海外购</div>
+			<div class="tab">
+				<ul>
+					<li class="tabbg"><a href="#" class="tab-a-color">精选热卖</a></li>
+					<li><a href="#">时尚新品</a></li>
+					<li><a href="#">加价换购</a></li>
+					<li><a href="#">畅享低价</a></li>
+					<li><a href="#">手机配件</a></li>
+					<li><a href="#">天生一对</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="floor-body">
+			<div class="floor-body-left">
+				<a href="#">
+					<img src="img/floor_1.jpg" alt="">
+				</a>
+				<ul class="channel">
+					<li><a href="#">手机</a></li>
+					<li>/</li>
+					<li><a href="#">配件</a></li>
+					<li>/</li>
+					<li><a href="#">充值</a></li>
+					<li>/</li>
+					<li><a href="#">优惠券</a></li>
+				</ul>
+				<div class="keywords">
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">返利攻略</a></li>
+						<li><a href="#">国美手机</a></li>
+						<li><a href="#">加价换购</a></li>
+						<li><a href="#">够没租租</a></li>
+						<li><a href="#">以旧换新</a></li>
+					</ul>
+										
+				</div>
+			</div>
+			<div class="floor-body-main">
+				<div class="tabbox1">
+					<!-- 小轮播图 -->
+					<div class="main-left-slide">
+						<div class="leftArrow" >＜</div>
+						<div class="rightArrow">＞</div>
+					</div>
+					<!-- 图片盒子 -->
+					<div class="main-right">
+						
+					</div>
+				</div>
+				<div class="tabbox2">	
+				</div>				
+			</div>
+		</div>
+		</div>
+	</div>
 	<!-- 10楼 生活服务 -->
-	<div class="lifeService">
+	<div class="lifeService" id="tenFloor">
 		<div class="wbox">
 			<div class="l-s-left">
 					<div class="jinrong">

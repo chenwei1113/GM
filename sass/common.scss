@@ -832,14 +832,14 @@ body {
 .slideshow {
     width: 100%;
     height: 450px;
-    background: #e70f50;
+    background: rgb(198, 17, 26);
     #slideshow {
         margin: 0 312px 0;
         position:relative;
         width: 750px;
         height: 450px;
     }
-    #leftArrow,#rightArrow{
+    .leftArrow,.rightArrow{
         position: absolute;
         top:50%;
         width: 30px;
@@ -850,13 +850,113 @@ body {
         background: rgba(180,180,180,0.4);
         font-size: 30px;
     }
-    #leftArrow{
+    .leftArrow{
         left:0px;
     }
-    #rightArrow{
+    .rightArrow{
         right:0px;
     }
 }
+
+ //电梯导航 样式
+ #elevator {
+    width: 66px;
+    position: fixed;
+    left: 33px;
+    top: 85px;
+    display: none;
+    .fl_nav {
+        background: #f6f6f6;
+        color: #5e5e5e;
+        font-size: 13px;
+        font-weight: 700;
+        height: 30px;
+        line-height: 31px;
+        width: 64px;
+        border: 1px solid #e6e6e6;
+        text-align: center;
+    }
+    .handler {
+        position: relative;
+        height: 43px;
+        // line-height: 5px;
+        cursor: pointer;
+        width: 64px;
+        border: 1px solid #e6e6e6;
+        text-align: center;
+        border-top: none;
+        b {
+            position: absolute;
+            margin-left: -1px;
+            margin-top: -1px;
+            width: 10px;
+            height: 10px;
+            background: url(../img/ui_1.png) -152px 0 no-repeat;
+            z-index: 2;
+            display: none;
+        }
+        a {
+            overflow: hidden;
+            width: 64px;
+            height: 43px;
+            font-size: 12px;
+            color: #5e5e5e;
+            display: inline-block;
+            span {
+                height: 12px;
+                line-height: 12px;
+                color: #777;
+                padding-top: 8px;
+                padding-bottom: 1px;
+                cursor: pointer;
+                display: inline-block;
+            }
+            p {
+                height: 16px;
+                line-height: 16px;
+                overflow: hidden;
+                cursor: pointer;
+                width: 48px;
+                margin-left: 8px;
+            }
+        }
+    }
+    .fl_goto {
+        li {
+            height: 29px;
+            text-align: center;
+            position: relative;
+            border-top: none;
+            cursor: pointer;
+            width: 64px;
+            border: 1px solid #e6e6e6;
+            border-top: none;
+            text-align: center;
+            a {
+                display: inline-block;
+                width: 17px;
+                height: 9px;
+                background: url(../img/ui_1.png) -216px -52px no-repeat;
+                margin-top: 10px;
+            } 
+        }
+        .fl_bottom a{
+            background-position: -216px 0;
+        }
+    }
+ }
+
+
+ //侧边导航 样式
+ #gome-bar {
+    position: fixed;
+    width: 35px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #5c5c5c;
+    z-index: 998;
+ }
 
 
         

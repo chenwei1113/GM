@@ -6,10 +6,8 @@
  .tao {
  	height: 460px;
  	margin-top: 20px;
- 	background: pink;
  	.taobox {
  		width: 420px;
- 		background: skyblue;
  		float: left;
  		&:nth-child(2){
  			margin: 0 10px;
@@ -20,17 +18,56 @@
  	}
  	.tao-title {
  		height: 35px;
+ 		line-height: 35px;
+ 		h2 {
+ 			margin-top: 4px;
+ 			width: 70px;
+ 			height: 27px;
+ 			background: url(../img/ui_1.png) no-repeat -169px -100px;
+ 			float:left;
+ 		}
+ 		span {
+ 			margin-left: 10px;
+			color: #ccc;
+			font-size: 20px;
+			float:left;
+ 		}
  	}
  	.tao-body {
  		height: 423px;
  		border: 1px solid #e6e6e6;
+
  	}
+ 	.tao-body-last {
+		width: 340px;
+		height: 421px;
+		border: 1px solid #e6e6e6;
+
+		.last-l {
+			width: 219px;
+			float: left;
+			img:first-child{
+				border-bottom: 1px dashed #e6e6e6;
+			}
+		}
+		.last-r {
+			width: 119px;
+			float: right;
+			border-left: 1px dashed #e6e6e6;
+			text-align: center;
+			img {
+				margin-top: 18px;
+				padding-bottom: 15px;
+				width: 119px;
+				border-bottom: 1px dashed #e6e6e6;
+			}
+		}
+	}
  }
 
  //领券中心
  .quanCenter {
  	height: 110px;
- 	background: red;
  	margin-top: 20px;
  	margin-bottom: 20px;
  }
@@ -39,24 +76,64 @@
  .finance {
  	.finance-title {
 		height: 40px;
-		background: purple;
+		line-height: 40px;
+		font-size: 18px;
+		h2,span {
+			display: inline-block;
+			font-weight: normal;
+		}
+		span {
+			margin-left: 10px;
+			color: #ccc;
+			font-size: 20px;
+		}
  	}
  	.finance-body {
  		height: 230px;
- 		background: yellow;
+ 		border: 1px solid #e6e6e6;
+ 		overflow: hidden;
+ 		box-sizing: border-box;
+ 		width: 1200px;
+ 		.f_m_l {
+ 			width: 1200px;
+ 			position: relative;
+ 			.pindao {
+ 				width: 90px;
+ 				height: 30px;
+ 				background: #b8892b;
+ 				display: block;
+ 				position: absolute;
+ 				top: 155px;
+ 				left: 60px;
+ 				color: #fff;
+ 				font-size: 14px;
+ 				line-height: 30px;
+ 				text-align: center;
+ 				border-radius: 3px;
+				&:hover {
+					cursor: pointer;
+				}
+ 			}
+ 		}
  	}
  }
 
- // 楼层部分 
+ // 楼层部分
+ .tabbg {
+ 	background: #719ef7;
+ }
+
  .floor {
- 	background: pink;
  	height: 545px;
  	// 上部分
  	.floor-top {
+ 		border-bottom: 1px solid #719ef7;
  		height: 38px;
  		padding-top: 32px;
  		.title {
  			float: left;
+ 			font-size: 20px;
+ 			line-height: 38px;
  		}
  		.tab {
  			float: right;
@@ -64,24 +141,121 @@
  			ul {
  				height: 30px;
  				margin-top: 8px;
- 				background: blue;
+ 				li {
+ 					line-height: 30px;
+ 					font-size: 14px;
+ 					float: left;
+ 					
+					.tab-a-color{
+					 	color: #fff;
+					}
+ 					a {
+ 						color: #5e5e5e;
+ 						padding: 0 15px;
+ 					}
+ 				}
  			}
  		}
  	}
  	//楼层主体部分
  	.floor-body {
-		height: 475px;
+		height: 470px;
 		.floor-body-left {
 			float: left;
 			width: 210px;
-			background: green;
-			height: 475px;
+			background: #7ca5f5;
+			height: 470px;
+			img {
+				margin-left: -10px;
+			}
+			.channel {
+				
+				background: rgba(0,0,0,0.1);
+				padding-left: 13px;
+				height: 30px;
+			}
+			.channel li {
+				float: left;
+				line-height: 30px;
+				font-size: 14px;
+				height: 30px;
+				color: #fff;
+				margin: 0 2px;
+				a {
+					color: #fff;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.keywords {
+				padding: 8px 0 0 15px;
+				ul {
+					margin-right: 13px;
+					float: left;
+				}
+				li {
+					line-height: 28px;
+					a {
+						font-size: 12px;
+						color: #fff;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
 		}
 		.floor-body-main {
 			float: left;
 			width: 990px;
-			background: orange;
-			height: 475px;
+			height: 470px;
+			position: relative;
+			.tabbox1{
+				position: absolute;
+				right: 0;
+				top: 0;
+				//放子轮播图的盒子
+				.main-left-slide {
+					width: 389px;
+					height: 470px;
+					float: left;
+					position:relative;
+				}
+				//轮播图中的箭头
+				.leftArrow,.rightArrow{
+			        position: absolute;
+			        top:50%;
+			        width: 30px;
+			        height: 50px;
+			        text-align: center;
+			        line-height: 50px;
+			        transform: translateY(-50%);
+			        background: rgba(180,180,180,0.4);
+			        font-size: 30px;
+			    }
+			    .leftArrow{
+			        left:0px;
+			    }
+			    .rightArrow{
+			        right:0px;
+			    }
+				// 1楼 右边盒子
+				.main-right {
+					width: 601px;
+					height: 470px;
+					float: left;
+				}
+			}
+			.tabbox2 {
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 990px;
+				height: 470px;
+				display: none;
+			}
+			
 		}
  	}
  }
@@ -214,7 +388,6 @@
  		}
  		.l-s-right {
  			width: 698px;
- 			background: skyblue;
  			height: 400px;
  			float: right;
  			position: relative;
@@ -506,4 +679,5 @@
  	}
  }
  
+
 
