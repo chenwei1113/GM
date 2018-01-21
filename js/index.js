@@ -468,15 +468,18 @@ $("#elevator").find($(".handler")).each(function(i){
 
 //3). 添加事件
 //鼠标进入 和 鼠标离开 事件
-$("#elevator").find($(".handler")).mouseenter(function(){
-	$(this).find("a").find("span").css({"color":"#f50f57"});
+$("#elevator").find($(".handler")).mouseenter(function(){	
 	$(this).find("a").find("p").css({"color":"#f50f57"});
+	$(this).find("a").find("span").css({"color":"#f50f57"});
 });
 $("#elevator").find($(".handler")).mouseleave(function(){
-	$(this).find("a").find("span").css({"color":"#5e5e5e"});
-	$(this).find("a").find("p").css({"color":"#5e5e5e"});
+	if($(this).index()==currentFloor){
+		showFloor(currentFloor);
+	}else {
+		$(this).find("a").find("span").css({"color":"#5e5e5e"});
+		$(this).find("a").find("p").css({"color":"#5e5e5e"});
+	}
 });
-
 $(".fl_top").mouseenter(function(){
 	$(this).find("a").css({"background-position":"-216px -78px"});	
 });
@@ -489,22 +492,110 @@ $(".fl_top").mouseleave(function(){
 $(".fl_bottom").mouseleave(function(){
 	$(this).find("a").css({"background-position":"-216px 0"});
 });
-
+var currentFloor = -1;
 // 楼梯 滚动事件
 $(window).scroll(function(){
-	console.log($(this).scrollTop());
-	console.log($("#firstFloor").offset().top);
-	//显示 楼梯
-	if($(this).scrollTop()>$("#firstFloor").offset().top-1000){
-		$("#elevator").css("display","block");
+	//显示当前楼层
+	if($(window).scrollTop()>1200){
+		for(var i=0;i<10;i++){
+			hideFloor(i);
+		}
+		var index = parseInt(($(window).scrollTop()-1200)/545);
+		currentFloor = index;
+		showFloor(index);
 	};
-	//隐藏楼梯
-	if($(this).scrollTop()>$("#tenFloor").offset().top+200 || $(this).scrollTop()<$("#firstFloor").offset().top){
+
+	// 隐藏楼梯
+	if($(window).scrollTop()>6650 || $(window).scrollTop()<1200 ){
 		$("#elevator").css("display","none");
 	};
 });
 
+function showFloor(i){
+	$("#elevator").css("display","block");
+	$("#elevator").find(".handler").eq(i).find("b").css("display","block");
+	$("#elevator").find(".handler").eq(i).find("a").find("p").css({"color":"#f50f57"});
+	$("#elevator").find(".handler").eq(i).find("a").find("span").css({"color":"#f50f57"});
+};
+function hideFloor(i){
+	$("#elevator").css("display","block");
+	$("#elevator").find(".handler").eq(i).find("b").css("display","none");
+	$("#elevator").find(".handler").eq(i).find("a").find("p").css({"color":"#5e5e5e"});
+	$("#elevator").find(".handler").eq(i).find("a").find("span").css({"color":"#5e5e5e"});
+};
 
+$(".handler").click(function(){
+	$(this).each(function(i){
+		$(this).siblings().find("a").find("span").css({"color":"#5e5e5e"});
+		$(this).siblings().find("a").find("p").css({"color":"#5e5e5e"});
+	});
+	
+	$(this).find("a").find("p").css({"color":"#f50f57"});
+	$(this).find("a").find("span").css({"color":"#f50f57"});
+
+	$("body,html").animate({
+        "scrollTop": 1200+545*$(this).index()
+    }, 800,'swing');
+});
+$(".fl_top").click(function(){
+	$("body,html").animate({
+        "scrollTop": 0
+    }, 1000);
+});
+$(".fl_bottom").click(function(){
+	$("body,html").animate({
+        "scrollTop": 7000
+    }, 1000);
+});
+//电梯导航部分 结束
+
+//顶部广告消失 
+$(".topAd i").click(function(){
+	$(".topAd").css({"display":"none"});
+});
+
+//滚动事件，固定搜索框
+$("body").prepend("<div></div>")
+$("body").find("div").eq(0).addClass("suspension");
+$(".searchForm").clone().prependTo($(".suspension"));
+$(".suspension").css({
+	"display":"none"
+});
+$(window).scroll(function(){
+	if($(window).scrollTop()>800){
+		$(".suspension").css({
+			"width": "100%",
+			"height": "50px",
+			"background": "rgba(255,255,255,0.7)",
+			"position":"fixed",
+			"top":0,
+			"z-index":1001,
+			"display":"block"
+		});
+		$(".searchForm").css({
+			"margin":"8px auto"
+		});
+	};
+
+	if($(window).scrollTop()<800){
+		$(".suspension").css({
+			"display":"none"
+		});
+	};
+});
+
+//搜索框 js
+$(".searchTypeList").find("li").click(function(){
+	let liValue = $(this).find("a").html();
+	console.log(liValue);
+	$(".searchType").find("span").html(liValue);
+	$(".searchTypeList").css("display","none");
+});
+$(".searchType").mouseenter(function(){
+	$(".searchTypeList").css({
+		"display":"block"
+	});
+});
 
 
 

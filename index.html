@@ -8,6 +8,10 @@
 	<link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
+	<div class="topAd">
+		<img src="img/topAd.jpg" alt="">
+		<a href="#"><i></i></a>
+	</div>
 	<!-- 电梯导航 部分 start-->
 	<div class="elevator" id="elevator">
 		<div class="fl_nav">楼层导航</div>
@@ -392,10 +396,24 @@
 			</div>
 		</div>
 		<!--购物车-->
-		<div class="shoppingCar">
-			<em class="car"></em>
-			<a href="#">购物车空了</a>
+		<div class="showCar">
+			<div class="shoppingCar">
+			<a href="#" class="cartlink">
+				<em class="car">
+				<span class="shopnum">
+					<span id="numId">0</span>
+					<i></i>
+				</span>
+				</em>
+				<span id="carttext">购物车空了</span>
+				<b></b>
+			</a>			
+			</div>
+			<div class="noshop">
+				<a href="#">购物车</a>中还没有商品，赶快选购吧！
+			</div>
 		</div>
+		
 	</div>
 	<!--head 头部搜索 end-->
 
@@ -5041,8 +5059,10 @@
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/slideshow.js"></script>
+
 
 
 
