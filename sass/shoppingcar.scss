@@ -68,25 +68,24 @@
 	    }
 	}
 	.has-products {
-	   
 	    .col-1 {
 	        width: 80px;
 	        display: inline-block;
 	    }
 	    .col-2 {
-            width: 410px;
+            width: 360px;
             display: inline-block;
         }
         .col-3 {
-            width: 136px;
+            width: 155px;
             display: inline-block;
         }
         .col-4 {
-            width: 136px;
+            width: 80px;
             display: inline-block;
         }
         .col-5 {
-            width: 170px;
+            width: 130px;
             display: inline-block;
             text-align: right;
         }
@@ -118,7 +117,7 @@
                 }
             }
             .prd-info {
-                
+                background: #fffaf4;
                 padding: 17px 17px 20px 0;
                 border: 1px solid #ccc;
                 border-top: none;
@@ -136,6 +135,93 @@
                         color: #E3101E;
                     }
                 }
+                .col-3,.col-4,.col-5 {
+                	vertical-align: top;
+                }
+                .col-4 {
+                	position: relative;
+                }
+                .col-5 {
+                	font-size: 13px;
+                	font-weight: 700;
+
+                }
+                #numInCar {
+                	width: 78px;
+					height: 20px;
+					border: 1px solid #ccc;
+					line-height: 20px;
+					text-align: center;
+                }
+                .addNumInCar, .miunsNumInCar {
+                	position: absolute;
+                	top: 0;
+                	width: 15px;
+                	height: 20px;
+                	text-align: center;
+                	line-height: 20px;
+                }
+                .miunsNumInCar {
+                	left: 0;
+                	border-right: 1px solid #ccc;
+                }
+                .addNumInCar {
+                	right: 0;
+                	border-left: 1px solid #ccc;
+                }
+                .col-7 {
+                	width: 65px;
+                	display: inline-block;
+                	margin-left: 30px;
+                	a {
+                		color: #666;
+                		&:hover {
+                			color: #e3101e;
+                		}
+                	}
+
+                }
+                #remove {
+
+                }
+
+            }
+            .prd-footer {
+            	margin-top: 20px;
+            	width: 100%;
+            	height: 60px;
+            	line-height: 60px;
+            	background: #f3f3f3;
+            	div {
+            		display: inline-block;
+            		margin-left: 403px;
+            		margin-right: 25px;
+            	}
+            	.count {
+            		color: #e3101e;
+            		font-weight: 700;
+            		font-size: 14px;
+            		margin: 0 2px;
+
+            	}
+            	#totalPrice {
+            		color: #e3101e;
+            		font-size: 18px;
+            		font-weight: 700;
+            		margin-right: 10px;
+            	}
+            	.goBuy {
+            		display: inline-block;
+            		width: 130px;
+            		height: 60px;
+            		background: #e3101e;
+            		color: #fff;
+            		text-align: center;
+            		font-family: microsoft YaHei;
+				    font-size: 16px;
+				    font-weight: 700;
+            	}
+
             }
 	    }
 	   

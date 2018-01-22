@@ -347,7 +347,7 @@
 		</div>
 		<div class="has-products">
 			<div class="prd-head">
-				<input type="checkbox" id="checkall" />
+				<input type="checkbox" id="checkall" checked />
 				<span class="col-1">全选</span>
 				<span class="col-2">商品信息</span>
 				<span class="col-3">单价</span>
@@ -356,18 +356,33 @@
 			</div>
 			<div class="prd-container">
 				<div class="dianpu-name">
-					<input type="checkbox" /><span class="col-1">国美自营</span>
+					<input type="checkbox" checked /><span class="col-1">国美自营</span>
 				</div>
 				<div class="prd-info">
-					<input type="checkbox" />
+					<input type="checkbox" checked />
 					<img src="img/cart_img.jpg" alt="" />
 					<span class="col-2">Apple AirPods 无线耳机<br /> MMEF2CH/A</span>
 					<span class="col-3">￥1188.00</span>
 					<span class="col-4">
-						<input type="text" value="1" id="goodsNum" />
-						<a href="javascript:;" class="addnum">+</a>
-						<a href="javascript:;" class="miunsnum">-</a>
+						<input type="text" value="1" id="numInCar" />
+						<a href="javascript:;" class="miunsNumInCar">-</a>
+						<a href="javascript:;" class="addNumInCar">+</a>
 					</span>
+					<span class="col-5" id="sumPrice">
+						￥1188.00
+					</span>
+					<span class="col-7">
+						<a href="javascript:;" id="remove">删除</a><br />
+						<a href="javascript:;">移入收藏夹</a>
+					</span>
+				</div>
+				<div class="prd-footer">
+					<input type="checkbox" checked><span class="col-1">全选</span>
+					<span class="delete">删除</span>
+					<div>已选<span class="count">1</span>件商品</div>
+					<span>总计（不含运费）：</span>
+					<span id="totalPrice">￥1188.00</span>
+					<a href="javascript:;" class="goBuy">去结算</a>
 				</div>
 			</div>
 		</div>
@@ -424,3 +439,5 @@
 		</div>
 </body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/shoppingcar.js"></script>
