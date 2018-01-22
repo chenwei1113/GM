@@ -427,7 +427,8 @@ table {
         left: 15px;
         width: 14px;
         background-color: #A5A5A5;
-        color: #FFF; }
+        color: #FFF;
+        font-weight: 700; }
         .gome-head .shoppingCar .car .shopnum i {
           position: absolute;
           width: 0;
