@@ -50,4 +50,27 @@ $(function(){
 		$(".phone-help").css({"display":"none"});
 		$(this).animate({"left":"90px"},500);
 	});
+
+
+	//点击登录的时候，发送ajax请求
+	$("#loginbtn").click(function(){
+		$.ajax({
+			url: "php/logincheck.php",
+			type: "post",
+			data: {
+				"username": $("#login-user").val(),
+				"userpass": $("#login-pass").val()
+			},
+			success: function(data){
+				//如果存在的话，就跳转到首页
+				if(data=="1"){
+					//保存cookie
+					location.href = "../index.html";
+				}else if(data=="0"){
+					alert("用户名或者密码错误");
+				}
+			}
+		});
+	});
+
 });

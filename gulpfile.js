@@ -23,6 +23,10 @@ gulp.task("copy-js",function(){
 	gulp.src("js/**/*")
 		.pipe(gulp.dest("D:\\phpStudy\\WWW\\GM\\js"));
 });
+gulp.task("copy-php",function(){
+	gulp.src("php/**/*")
+		.pipe(gulp.dest("D:\\phpStudy\\WWW\\GM\\php"));
+});
 gulp.task("sassfilelocal",function(){
 	gulp.src("sass/**/*")
 		.pipe(sass())
@@ -33,6 +37,7 @@ gulp.task("watchall",function(){
 	gulp.watch("*.html",["copy-html"]);
 	gulp.watch("img/**/*",["copy-img"]);
 	gulp.watch("js/**/*",["copy-js"]);
+	gulp.watch("php/**/*",["copy-php"]);
 	gulp.watch("sass/**/*",["sassfile"]);
 	gulp.watch("font/**/*",["copy-font"]);
 	gulp.watch("sass/**/*",["sassfilelocal"]);

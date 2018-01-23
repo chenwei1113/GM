@@ -5,7 +5,7 @@
 	<title>登录</title>
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 	<link rel="stylesheet" href="css/common.css">
-	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/login.css?p=1">
 </head>
 <body>
 	<div class="loginlogo">
@@ -41,9 +41,9 @@
 						</div>
 					</div>
 					<div class="login-box-right">
-					<form action="">
-						<input type="text" id="login-user" placeholder="手机号码/用户名/邮箱/门店会员卡号">
-						<input type="password" placeholder="密码" />
+					<form method="" action="" id="loginform">
+						<input type="text" name="username" id="login-user" placeholder="手机号码/用户名/邮箱/门店会员卡号">
+						<input type="password" name="userpass" id="login-pass" placeholder="密码" />
 						<div class="remember">
 							<div class="autologin">
 								<input type="checkbox" /><span>自动登录</span>
@@ -53,9 +53,8 @@
 								<span>|</span>
 								<a href="#">免费注册</a>
 							</div>
-
 						</div>
-						<input type="button" value="登录" />
+						<input type="button" value="登录"  id="loginbtn" />
 					</form>
 						
 					</div>
