@@ -67,14 +67,49 @@ $(document).ready(function(){
 });
 
 //计算购物车中的价格
-$(".addNumInCar").click(function(){
-	let childrens = $(this).parent().children();
-	console.log(childrens);
-	let numInCar = parseInt(childrens.eq(0).val())+1;
-	childrens.eq(0).val(numInCar);
-
-	var perPrice = $(this).parent().parent().find($(".perPrice")).html().substring(1);
-	console.log(perPrice);
-
-	$(this).parent().parent().find($(".sumPrice")).html(perPrice*numInCar);
+//增加数量
+$(".addNumInCar").bind("click",function(){
+    //console.log($(this).parent().parent().find($(":checkbox")));    
+    changeNumAndPrice($(this),"+");
+    changeTotalPrice();
 });
+//减少数量
+$(".miunsNumInCar").bind("click",function(){
+    changeNumAndPrice($(this),"-");
+    changeTotalPrice();
+});
+
+function changeNumAndPrice($obj,operator){
+    let childrens = $obj.parent().children();
+   // console.log(childrens);
+    let numInCar = parseInt(childrens.eq(0).val());
+    if(operator=="+"){
+        numInCar += 1;
+    }else if(operator=="-"){
+        if(numInCar==1){
+            numInCar = 1; 
+            return;
+        }
+        numInCar -= 1;
+    }
+    childrens.eq(0).val(numInCar);
+
+    var perPrice = $obj.parent().parent().find($(".perPrice")).html().substring(1);
+    // console.log(perPrice);
+    // console.log(numInCar);
+
+    $obj.parent().parent().find($(".sumPrice")).html("￥"+(perPrice*numInCar).toFixed(2));
+  
+}
+
+function changeTotalPrice(){
+    //改变totalPrice
+    let totalPrice = 0;//parseInt($("#totalPrice").html().substring(1));
+    $(".prd-info .sumPrice").each(function(i){
+        //trim();去掉字符串前后的空格
+        
+        totalPrice += parseInt($(this).html().trim().substring(1));
+    });
+    
+    $("#totalPrice").html("￥"+totalPrice.toFixed(2));
+}
