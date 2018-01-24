@@ -1,5 +1,11 @@
 .subNav .wbox .allgoods .navBox {
 	display: none;
+	z-index: 10;
+}
+.subNav .wbox .allgoods:hover {
+    .navBox {
+        display: block;
+    }
 }
 .wbox {
 	width: 1200px;
@@ -10,7 +16,7 @@ body {
 	height: 5000px;
 }
 
-// ÉÌÆ·ÏêÇé ÑùÊ½
+// 脡脤脝路脧锚脟茅 脩霉脢陆
 .product-road {
 	height: 40px;
 	width: 100%;
@@ -82,7 +88,6 @@ body {
             height: 448px;
             border: 1px solid #d9d9d9;
             position:relative;
-            background-image:url(../img/fdj1_450.jpg);
             background-size:450px 450px;
 		}
 		#imglist {

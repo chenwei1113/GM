@@ -538,8 +538,10 @@ table {
   color: #bbb; }
 
 .searchBtn {
-  width: 90px;
-  height: 32px;
+  width: 88px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
   background: #DD00A7;
   color: #fff;
   font-size: 16px;

@@ -54,6 +54,7 @@ table{border-collapse:collapse;border-spacing:0};
             height: 4px;
         }
     }
+    
     //gome-top主体部分
     #gome-top-body{
         height: 30px;
@@ -701,8 +702,10 @@ table{border-collapse:collapse;border-spacing:0};
         color: #bbb;
     }
     .searchBtn {
-        width: 90px;
-        height: 32px;
+        width: 88px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
         background: #DD00A7;
         color: #fff;
         font-size: 16px;

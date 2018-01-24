@@ -57,16 +57,16 @@
     width: 80px;
     display: inline-block; }
   .shopping-body .has-products .col-2 {
-    width: 410px;
+    width: 360px;
     display: inline-block; }
   .shopping-body .has-products .col-3 {
-    width: 136px;
+    width: 155px;
     display: inline-block; }
   .shopping-body .has-products .col-4 {
-    width: 136px;
+    width: 80px;
     display: inline-block; }
   .shopping-body .has-products .col-5 {
-    width: 170px;
+    width: 130px;
     display: inline-block;
     text-align: right; }
   .shopping-body .has-products input[type=checkbox] {
@@ -91,9 +91,9 @@
     .shopping-body .has-products .prd-container .dianpu-name span {
       vertical-align: middle; }
   .shopping-body .has-products .prd-container .prd-info {
+    background: #fffaf4;
     padding: 17px 17px 20px 0;
-    border: 1px solid #ccc;
-    border-top: none; }
+    border: 1px solid #ccc; }
     .shopping-body .has-products .prd-container .prd-info input {
       vertical-align: top;
       margin-right: 8px; }
@@ -103,6 +103,70 @@
     .shopping-body .has-products .prd-container .prd-info .col-2:hover {
       cursor: pointer;
       color: #E3101E; }
+    .shopping-body .has-products .prd-container .prd-info .col-3, .shopping-body .has-products .prd-container .prd-info .col-4, .shopping-body .has-products .prd-container .prd-info .col-5 {
+      vertical-align: top; }
+    .shopping-body .has-products .prd-container .prd-info .col-4 {
+      position: relative; }
+    .shopping-body .has-products .prd-container .prd-info .col-5 {
+      font-size: 13px;
+      font-weight: 700; }
+    .shopping-body .has-products .prd-container .prd-info #numInCar {
+      width: 78px;
+      height: 20px;
+      border: 1px solid #ccc;
+      line-height: 20px;
+      text-align: center; }
+    .shopping-body .has-products .prd-container .prd-info .addNumInCar, .shopping-body .has-products .prd-container .prd-info .miunsNumInCar {
+      position: absolute;
+      top: 0;
+      width: 15px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px; }
+    .shopping-body .has-products .prd-container .prd-info .miunsNumInCar {
+      left: 0;
+      border-right: 1px solid #ccc; }
+    .shopping-body .has-products .prd-container .prd-info .addNumInCar {
+      right: 0;
+      border-left: 1px solid #ccc; }
+    .shopping-body .has-products .prd-container .prd-info .col-7 {
+      width: 65px;
+      display: inline-block;
+      margin-left: 30px; }
+      .shopping-body .has-products .prd-container .prd-info .col-7 a {
+        color: #666; }
+        .shopping-body .has-products .prd-container .prd-info .col-7 a:hover {
+          color: #e3101e; }
+  .shopping-body .has-products .prd-container .prd-footer {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #f3f3f3; }
+    .shopping-body .has-products .prd-container .prd-footer div {
+      display: inline-block;
+      margin-left: 553px;
+      margin-right: 25px; }
+    .shopping-body .has-products .prd-container .prd-footer .count {
+      color: #e3101e;
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0 2px; }
+    .shopping-body .has-products .prd-container .prd-footer #totalPrice {
+      color: #e3101e;
+      font-size: 18px;
+      font-weight: 700;
+      margin-right: 10px; }
+    .shopping-body .has-products .prd-container .prd-footer .goBuy {
+      display: inline-block;
+      width: 130px;
+      height: 60px;
+      background: #e3101e;
+      color: #fff;
+      text-align: center;
+      font-family: microsoft YaHei;
+      font-size: 16px;
+      font-weight: 700; }
 
 .footer-bottom {
   padding-top: 20px;

@@ -40,7 +40,7 @@ BigMirror.prototype.createUI = function(){
         "top": 0,
         "width": this.bigMirrorWidth*this.multiple, //2.25
         "height": this.bigMirrorHeight*this.multiple,
-		"background": "url(img/fdj1_800.jpg)",
+		"background-image": "",
         "background-repeat": "no-repeat",      
         "background-size": this.$Obj.width()*this.multiple+"px "+this.$Obj.height()*this.multiple,
         "z-index": "200",		

@@ -81,7 +81,10 @@
     .login-box-warp .login-box-left .imgbox {
       float: left;
       position: absolute;
-      left: 90px; }
+      left: 90px;
+      width: 167px;
+      height: 190px;
+      text-align: left; }
     .login-box-warp .login-box-left .phone-help {
       margin-top: 18px;
       position: absolute;

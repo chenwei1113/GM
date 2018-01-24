@@ -24,3 +24,33 @@ function getCookie(cookieName){
 	}
 	return cookieValue;
 }
+
+
+
+//一、鼠标滑过li , 显示 导航中的详细条目
+// start
+$("#navUl").find("li").mouseenter(function(){
+	$(this).parent().siblings().eq($(this).index()).css("display","block");
+});
+$("#navUl").find("li").mouseleave(function(){
+	$(this).parent().siblings().eq($(this).index()).css("display","none");
+});
+// end
+
+//顶部广告消失 
+$(".topAd i").click(function(){
+	$(".topAd").css({"display":"none"});
+});
+
+//搜索框 js
+$(".searchTypeList").find("li").click(function(){
+	let liValue = $(this).find("a").html();
+	console.log(liValue);
+	$(".searchType").find("span").html(liValue);
+	$(".searchTypeList").css("display","none");
+});
+$(".searchType").mouseenter(function(){
+	$(".searchTypeList").css({
+		"display":"block"
+	});
+});

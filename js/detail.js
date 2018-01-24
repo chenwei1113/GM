@@ -85,29 +85,24 @@ function FinalBuy($obj){
 	});	
 }
 
-
+//入口函数
 $(function(){
-//	页面已加载,就读取cookie的数据
+//	页面一加载,就读取cookie的数据
 	getData();
-	
-	
-	//根据goodsnum 判断购物车的颜色 
-	if($("#numId").html()>0){
-		$(".shopnum").css({
-			"background":"#dd00a7"
-		});
-		$(".shopnum").find("i").css({
-			"border-color":"transparent transparent transparent #dd00a7"
-		});
-	}
-	
-	//浏览最终购买 模块
-	FinalBuy({
-		"boxDom": $(".buy-Pics"),
-		"imgArr": ["img/buy1.jpg","img/buy2.jpg","img/buy3.jpg","img/buy4.jpg","img/buy3.jpg","img/buy3.jpg","img/buy3.jpg","img/buy3.jpg"],
-		"priceArr": ["￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00"],
-		"textArr": ["Beats Solo3 Wireless 头戴式无线蓝牙耳机(霹雳红)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)"]
+	//console.log(getCookie("goodsid")); //可以得到goodsid
+	//页面一加载，发送ajax请求，从数据库中读取数据，并显示
+	$.ajax({
+		url: "php/getGoodsInfo.php",
+		type: "get",
+		data: {
+			"goodsId": getCookie("goodsid")
+		},
+		dataType: "json",
+		success: function(data){
+			showDetailPage(data);
+		}
 	});
+
 	
 	//放大镜
 	var b = new BigMirror({
@@ -117,11 +112,45 @@ $(function(){
 		"multiple":1.78
     });
     b.createUI();
-    b.initEvent();	
+    b.initEvent(); 	
     
     //放大镜部分 的事件
-    var fdjimgArr = ["img/fdj1_450.jpg","img/fdj2_450.jpg","img/fdj3_450.jpg","img/fdj4_450.jpg","img/fdj5_450.jpg"];
-    var bigImgArr = ["img/fdj1_800.jpg","img/fdj2_800.jpg","img/fdj3_800.jpg","img/fdj4_800.jpg","img/fdj5_800.jpg","img/fdj6_800.jpg","img/fdj7_800.jpg","img/fdj7_800.jpg"];
+    var fdjimgArr = [];//450
+    var bigImgArr = [];//800
+
+    function showDetailPage(data){
+    	$("#imglist img").eq(0).attr('src','img/'+data.goodsType);
+    	$("#imglist img").eq(1).attr('src','img/'+data.beiyong2);
+    	$("#imglist img").eq(2).attr('src','img/'+data.beiyong5);
+    	$("#imglist img").eq(3).attr('src','img/'+data.beiyong8);
+    	$("#imglist img").eq(4).attr('src','img/'+data.beiyong11);
+
+    	$("#bigMirrorBox").css({
+    		"background-image": 'url(img/'+data.goodsImg+')'
+    	});
+
+    	$(".bigShow").css({
+    		"background-image": 'url(img/'+data.beiyong1+')'
+    	});
+
+    	$(".title").html(data.goodsDesc);
+    	$(".price").html("￥"+data.goodsPrice);
+
+    	
+		fdjimgArr.push(data.goodsImg);
+		fdjimgArr.push(data.beiyong3);
+		fdjimgArr.push(data.beiyong6);
+		fdjimgArr.push(data.beiyong9);
+		fdjimgArr.push(data.beiyong12);
+
+		bigImgArr.push(data.beiyong1);
+		bigImgArr.push(data.beiyong4);
+		bigImgArr.push(data.beiyong7);
+		bigImgArr.push(data.beiyong10);
+		bigImgArr.push(data.beiyong13);	
+    }
+
+
     $("#imglist").find("img").bind({
     	//鼠标进入
     	"mouseenter": function(){
@@ -130,12 +159,12 @@ $(function(){
     		}).siblings().css({
     			"border": "1px solid transparent"
     		});
-      		console.log(fdjimgArr[$(this).index()]);
+      		//console.log(fdjimgArr[$(this).index()]);
     		$("#bigMirrorBox").css({
-    			"background-image": "url("+fdjimgArr[$(this).index()]+")"
+    			"background-image": "url('img/"+fdjimgArr[$(this).index()]+"')"
     		});
     		$(".bigShow").css({
-    			"background-image": "url("+bigImgArr[$(this).index()]+")"
+    			"background-image": "url('img/"+bigImgArr[$(this).index()]+"')"
     		});
     	},
     	
@@ -176,6 +205,26 @@ $(function(){
 		});
 	}); 
 	
+
+	//根据goodsnum 判断购物车的颜色 
+	if($("#numId").html()>0){
+		$(".shopnum").css({
+			"background":"#dd00a7"
+		});
+		$(".shopnum").find("i").css({
+			"border-color":"transparent transparent transparent #dd00a7"
+		});
+	}
+	
+	//浏览最终购买 模块
+	FinalBuy({
+		"boxDom": $(".buy-Pics"),
+		"imgArr": ["img/buy1.jpg","img/buy2.jpg","img/buy3.jpg","img/buy4.jpg","img/buy3.jpg","img/buy3.jpg","img/buy3.jpg","img/buy3.jpg"],
+		"priceArr": ["￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00","￥2088.00"],
+		"textArr": ["Beats Solo3 Wireless 头戴式无线蓝牙耳机(霹雳红)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)","森海塞尔/SENNHEISER MX80 入门重低音手机电脑耳塞式耳机(黑色)"]
+	});
 	
 });
+
+
 

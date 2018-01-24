@@ -65,7 +65,10 @@ $(function(){
 				//如果存在的话，就跳转到首页
 				if(data=="1"){
 					//保存cookie
-					location.href = "../index.html";
+					//保存数据
+					saveData();
+					//首页一打开的时候，读取保存的用户名
+					location.href = "index.html";
 				}else if(data=="0"){
 					alert("用户名或者密码错误");
 				}
@@ -74,3 +77,11 @@ $(function(){
 	});
 
 });
+//保存cookie
+//保存数据
+function saveData(){
+	var username = $("#login-user").val();
+	console.log($("#login-user").val());
+	//添加cookie
+	saveCookie("username",username,7);
+}
