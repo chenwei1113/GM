@@ -1,21 +1,44 @@
 //页面一打开，读取cookie
 $(function(){
 	getData();
+	//发送ajax请求，显示购物车中的商品数量
+	 $.ajax({
+        type: "get",
+        url: 'php/getShoppingCart.php',
+        data: {
+            'vipName':getCookie("username")
+        },
+        dataType: "json",
+        success: function(data){
+            getPrdNumFormCart(data);
+        }
+    });
+
 });
-//读取保存的数据
-function getData(){
-	var username = getCookie("username");
-	//判断有没有存入的数据
-	if(username==""){
-		return;
-	}
-	$("#loginDiv-name").html(username);
-	$(".gome-login").html("欢迎您！");
-	$(".gome-register").html("");
-	$(".user-name").find("p").find("a").html("");
-	$(".public-dropdown .mygomelogin").html("");
-	return username;
+//从购物车中得到商品的数量
+function getPrdNumFormCart(data){
+    var prdNum = 0;
+    for(let i=0;i<data.length;i++){
+        prdNum += parseInt(data[i].goodsCount);
+    }
+    //console.log(prdNum);
+    $("#numId").html(prdNum);
+
+    //如果商品数量不为0，去改小购物车的样式
+    if(prdNum!=0){
+        //改变购物车的颜色
+        $(".shopnum").css({
+            "background":"#dd00a7"
+        });
+        $(".shopnum").find("i").css({
+            "border-color":"transparent transparent transparent #dd00a7"
+        });
+        $("#carttext").html("去购物车结算");
+    }
 }
+
+
+
 
 //一、鼠标滑过li , 显示 导航中的详细条目
 // start

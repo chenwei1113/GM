@@ -98,6 +98,8 @@
       vertical-align: top;
       margin-right: 8px; }
     .shopping-body .has-products .prd-container .prd-info img {
+      width: 80px;
+      height: 80px;
       vertical-align: top;
       border: 1px solid #ccc; }
     .shopping-body .has-products .prd-container .prd-info .col-2:hover {
@@ -145,7 +147,7 @@
     background: #f3f3f3; }
     .shopping-body .has-products .prd-container .prd-footer div {
       display: inline-block;
-      margin-left: 553px;
+      margin-left: 520px;
       margin-right: 25px; }
     .shopping-body .has-products .prd-container .prd-footer .count {
       color: #e3101e;
@@ -156,7 +158,9 @@
       color: #e3101e;
       font-size: 18px;
       font-weight: 700;
-      margin-right: 10px; }
+      margin-right: 10px;
+      width: 115px;
+      display: inline-block; }
     .shopping-body .has-products .prd-container .prd-footer .goBuy {
       display: inline-block;
       width: 130px;

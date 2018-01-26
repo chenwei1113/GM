@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
 	<title>注册</title>
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 	<link rel="stylesheet" href="css/common.css">
@@ -16,7 +20,7 @@
 
 	<div class="register-body">
 		<div class="title">个人用户注册</div>
-		<p>我已经注册，现在就<a href="#">登录</a></p>
+		<p>我已经注册，现在就<a href="login.html">登录</a></p>
 		<div class="formlist">
 			<form class="regform" method="post" action="php/regsave.php">
 				<div class="reg-items">
@@ -27,13 +31,13 @@
 				</div>
 				<div class="reg-items">
 					<label for="" class="reg-label">设置密码：</label>
-					<input type="text" id="userpass" class="i-text" name="userpass"/>
+					<input type="password" id="userpass" class="i-text" name="userpass"/>
 					<span class="rightTip"></span>
 					<div class="msg-box errorMsg2">提示信息</div>
 				</div>
 				<div class="reg-items">
 					<label for="" class="reg-label">确认密码：</label>
-					<input type="text" class="i-text" disabled="disabled" />
+					<input type="password" class="i-text" disabled="disabled" />
 					<span class="rightTip"></span>
 					<div class="msg-box errorMsg3" >提示信息</div>
 				</div>

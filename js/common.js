@@ -24,8 +24,25 @@ function getCookie(cookieName){
 	}
 	return cookieValue;
 }
+//点击退出按钮时，清除cookie
+$(".gome-login").click(function(){
+	saveCookie("username",'',-1);
+});
+//读取保存的数据,改变相应的样式，改变登录名
+function getData(){
+	var username = getCookie("username");
+	//判断有没有存入的数据
+	if(username==""){
+		return;
+	}
+	$("#loginDiv-name").html(username);
+	$(".gome-login").html("退出");
+	$(".gome-register").html("欢迎您！");
+	$(".user-name").find("p").find("a").html("");
+	$(".public-dropdown .mygomelogin").html("");
+	return username;
 
-
+}
 
 //一、鼠标滑过li , 显示 导航中的详细条目
 // start

@@ -41,17 +41,15 @@ $(function(){
 
 
 	//二维码移动
-	$(".imgbox").mouseenter(function(){
-		$(this).animate({"left":"20px"},500,function(){
-			$(".phone-help").css({"display":"block"});
-		});
+	$(".imgwrap").mouseenter(function(){
+		$(".imgbox").stop(true).animate({"left":"20px"});
+		$(".phone-help").stop(true).animate({"opacity":1});	
 	});
-	$(".imgbox").mouseleave(function(){
-		$(".phone-help").css({"display":"none"});
-		$(this).animate({"left":"90px"},500);
+	$(".imgwrap").mouseleave(function(){
+		$(".imgbox").stop(true).animate({"left":"90px"});
+		$(".phone-help").stop(true).animate({"opacity":0});	
 	});
-
-
+	
 	//点击登录的时候，发送ajax请求
 	$("#loginbtn").click(function(){
 		$.ajax({

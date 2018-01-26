@@ -1,8 +1,139 @@
 
 $(function(){
+    //页面一加载,就显示购物车（从数据库中拿数据）
+    getData();
+    //显示购物车
+    $.ajax({
+        type: "get",
+        url: 'php/getShoppingCart.php',
+        data: {
+            'vipName':getCookie("username")
+        },
+        dataType: "json",
+        success: function(data){
+            console.log(data.length);
+            console.log(getCookie("username"));
+            showShoppingCartPage(data);
+        }
+    });
+});
+//显示购物车页面
+function showShoppingCartPage(datas){
+    for(let i=0;i<datas.length;i++){
+        var str = `
+        <div class='prd-info' goodsid='${datas[i].goodsId}'>
+            <input type='checkbox' checked='checked' />
+            <img src='img/${datas[i].goodsName}' />
+            <span class='col-2'>${datas[i].goodsDesc}</span>
+            <span class='col-3 perPrice'>￥${datas[i].goodsPrice}.00</span>
+            <span class='col-4'>
+                <input type='text' value='${datas[i].goodsCount}' id='numInCar' class='numInCar' />
+                <a href='javascript:;' class='miunsNumInCar'>-</a>
+                <a href='javascript:;' class='addNumInCar'>+</a>
+            </span>
+            <span class='col-5 sumPrice' id='sumPrice'>
+                ￥${datas[i].goodsCount*datas[i].goodsPrice}.00
+            </span>
+            <span class='col-7'>
+                <a href='javascript:;' class='remove' id='remove'>删除</a><br />
+                <a href='javascript:;'>移入收藏夹</a>
+            </span>
+        </div>
+                `;
+        //console.log(datas.length);
+        $(".prd-container").prepend(str);   
+    }
 
+    //建立全选的联系
+    $(".selectAll").checkRelation($(".prd-info :checkbox"));
+    //改变总价
+    changeTotalPrice();
+    //点击全选按钮，改变总价
+    $(".selectAll").click(function(){
+        changeTotalPrice();             
+    });
+    //计算购物车中的价格
+    //增加数量
+    $(".addNumInCar").bind("click",function(){
+        //1) 点击 增加数量和减少数量的时候，让当前的checkbox变为选中的状态
+        $(this).parent().parent().find($(":checkbox"))[0].checked=true;
+        //2) 改变全选的状态
+        changeSelectAllStatus();
+        //改变数量和sumPrice
+        changeNumAndPrice($(this),"+");
+        changeTotalPrice();
 
-})
+        //发送请求，改变 数据库中的数量
+        $.ajax({
+            type: "get",
+            url: 'php/updateGoodsCount.php',
+            data: {
+                "vipName": getCookie("username"),
+                "goodsId": $(this).parent().parent().attr("goodsid"),
+                "goodsCount": $(this).parent().children().eq(0).val()
+            },
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+            }
+        });
+
+    });
+
+  
+
+    //减少数量
+    $(".miunsNumInCar").bind("click",function(){
+        $(this).parent().parent().find($(":checkbox"))[0].checked=true;
+        //2) 改变全选的状态
+        changeSelectAllStatus();
+        changeNumAndPrice($(this),"-");
+        changeTotalPrice();
+
+        //发送请求，改变 数据库中的数量
+        $.ajax({
+            type: "get",
+            url: 'php/updateGoodsCount.php',
+            data: {
+                "vipName": getCookie("username"),
+                "goodsId": $(this).parent().parent().attr("goodsid"),
+                "goodsCount": $(this).parent().children().eq(0).val()
+            },
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+            }
+        });
+
+        
+    });
+    //点击复选框的时候，去计算totalPrice
+    $(".prd-container :checkbox").click(function(){ 
+        changeTotalPrice();     
+    });
+
+    //点击删除按钮，让其在页面上移除，并在数据库中删除本条记录
+    $(".remove").click(function(){
+        let isSure = confirm("确定要删除吗？");
+        if(isSure == true){
+            
+            $.ajax({
+                url: 'php/deleteGoods.php',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    "vipName": getCookie("username"),
+                    "goodsId": $(this).parent().parent().attr("goodsid")
+                },
+                success: function(data){                   
+                    alert("删除成功");
+                }
+            });
+            $(this).parent().parent().remove();
+        }
+          
+    });
+}
 
 
 
@@ -17,12 +148,7 @@ jQuery.fn.extend({
             this.checked = isChecked;
         });
     },
-    //反选,,对每个checkbox进行遍历
-    "reverse": function(){
-        this.each(function(){
-            this.checked = !this.checked;
-        });
-    },
+    
     //所有的checkbox 与 全选按钮的联动
     //父与子的关系
     "checkRelation":function($sub){
@@ -43,41 +169,12 @@ jQuery.fn.extend({
             });
             $parent[0].checked = isChecked;
         });
+        //不是在点击的时候，让子控制父。当子复选框的checked状态发生变化时，子控制父。
+       
     }
 });
 
-$(document).ready(function(){
-    //这个函数的意思是 把一个复选框和多个复选框关联起来
-    $(".selectAll").checkRelation($(".prd-info :checkbox"));
 
-
-
-    //计算购物车中的总价(如果是选中状态下的才去计算)
-    $(".prd-container :checkbox").click(function(){	
-		console.log($(".prd-container :checkbox:checked"));//打印是选中状态的checkbox
-				
-    });
-
-	$(".prd-container :checkbox").each(function(i){
-		if(this.checked==true){
-			//console.log($(this));
-		}
-	});
-
-});
-
-//计算购物车中的价格
-//增加数量
-$(".addNumInCar").bind("click",function(){
-    //console.log($(this).parent().parent().find($(":checkbox")));    
-    changeNumAndPrice($(this),"+");
-    changeTotalPrice();
-});
-//减少数量
-$(".miunsNumInCar").bind("click",function(){
-    changeNumAndPrice($(this),"-");
-    changeTotalPrice();
-});
 
 function changeNumAndPrice($obj,operator){
     let childrens = $obj.parent().children();
@@ -87,29 +184,51 @@ function changeNumAndPrice($obj,operator){
         numInCar += 1;
     }else if(operator=="-"){
         if(numInCar==1){
-            numInCar = 1; 
+            numInCar = 1;
             return;
         }
         numInCar -= 1;
     }
     childrens.eq(0).val(numInCar);
-
     var perPrice = $obj.parent().parent().find($(".perPrice")).html().substring(1);
-    // console.log(perPrice);
-    // console.log(numInCar);
-
-    $obj.parent().parent().find($(".sumPrice")).html("￥"+(perPrice*numInCar).toFixed(2));
-  
+    $obj.parent().parent().find($(".sumPrice")).html("￥"+(perPrice*numInCar).toFixed(2));  
 }
 
 function changeTotalPrice(){
-    //改变totalPrice
+    //改变totalPrice时，先判断checkbox有没有被选中，选中的话，再去计算
     let totalPrice = 0;//parseInt($("#totalPrice").html().substring(1));
-    $(".prd-info .sumPrice").each(function(i){
-        //trim();去掉字符串前后的空格
-        
-        totalPrice += parseInt($(this).html().trim().substring(1));
+    $(".prd-container :checkbox").each(function(i){
+    	if(this.checked==true){
+    		totalPrice += parseInt($(this).siblings(".sumPrice").html().trim().substring(1));
+    	}
     });
-    
     $("#totalPrice").html("￥"+totalPrice.toFixed(2));
+}
+
+
+function changeSelectAllStatus(){
+	let isChecked = true;
+    $(".prd-container :checkbox").each(function(){
+        if(this.checked==false){
+            isChecked = false;
+        }
+    });
+    $(".selectAll")[0].checked = isChecked;
+}
+
+function changeNumInDB(){
+    //发送请求，改变 数据库中的数量
+    $.ajax({
+        type: "get",
+        url: 'php/updateGoodsCount.php',
+        data: {
+            "vipName": getCookie("username"),
+            "goodsId": $(this).parent().parent().attr("goodsid"),
+            "goodsCount": $(this).parent().children().eq(0).val()
+        },
+        dataType: 'json',
+        success: function(data){
+            console.log(data);
+        }
+    });
 }

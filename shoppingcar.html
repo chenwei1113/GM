@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
 	<title>购物车</title>
 	<link rel="shortcut icon" href="img/favicon.ico"/>
 	<link rel="stylesheet" href="css/common.css" />
@@ -103,9 +107,9 @@
 					</div>
 				</li>
 				<!--登录注册-->
-				<li id="loginDiv-link">
-					<a href="javascript:;" class="gome-login">登录</a>
+				<li id="loginDiv-link">	
 					<a href="javascript:;" class="gome-register">注册有礼<i></i></a>
+					<a href="javascript:;" class="gome-login">登录</a>
 				</li>
 			</ul>
 			<!--导航 右部分-->
@@ -355,42 +359,9 @@
 				<span class="col-5">小计</span>
 			</div>
 			<div class="prd-container">
-				<div class="prd-info">
-					<input type="checkbox" checked="checked" />
-					<img src="img/cart_img.jpg" alt="" />
-					<span class="col-2">Apple AirPods 无线耳机<br /> MMEF2CH/A</span>
-					<span class="col-3 perPrice">￥1188.00</span>
-					<span class="col-4">
-						<input type="text" value="1" id="numInCar" class="numInCar" />
-						<a href="javascript:;" class="miunsNumInCar">-</a>
-						<a href="javascript:;" class="addNumInCar">+</a>
-					</span>
-					<span class="col-5 sumPrice" id="sumPrice">
-						￥1188.00
-					</span>
-					<span class="col-7">
-						<a href="javascript:;" id="remove">删除</a><br />
-						<a href="javascript:;">移入收藏夹</a>
-					</span>
-				</div>
-				<div class="prd-info">
-					<input type="checkbox" checked="checked" />
-					<img src="img/cart_img.jpg" alt="" />
-					<span class="col-2">Apple AirPods 无线耳机<br /> MMEF2CH/A</span>
-					<span class="col-3 perPrice">￥1188.00</span>
-					<span class="col-4">
-						<input type="text" value="1" id="numInCar" class="numInCar"/>
-						<a href="javascript:;" class="miunsNumInCar">-</a>
-						<a href="javascript:;" class="addNumInCar">+</a>
-					</span>
-					<span class="col-5 sumPrice" id="sumPrice">
-						￥1188.00
-					</span>
-					<span class="col-7">
-						<a href="javascript:;" id="remove">删除</a><br />
-						<a href="javascript:;">移入收藏夹</a>
-					</span>
-				</div>
+				<!-- 购物车主体部分 开始 -->
+				<!-- 购物车主体部分 结束 -->
+				
 				<div class="prd-footer">
 					
 					<div>已选<span class="count">1</span>件商品</div>
@@ -454,4 +425,5 @@
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/shoppingcar.js"></script>

@@ -1,20 +1,4 @@
-//保存数据
-function saveData(){
-	var goodsnum = parseInt($("#numId").html())+parseInt($("#goodsNum").val());
-	console.log(goodsnum);
-	//添加cookie
-	saveCookie("goodsnum",goodsnum,7);
-}
-//读取数据
-function getData(){
-	var goodsnum = getCookie("goodsnum");
-	//判断有没有存入的数据
-	if(goodsnum==""){
-		return;
-	}
-	$("#numId").html(goodsnum);
-	return goodsnum;
-}
+
 
 //浏览最终购买
 function FinalBuy($obj){
@@ -133,7 +117,7 @@ $(function(){
     		"background-image": 'url(img/'+data.beiyong1+')'
     	});
 
-    	$(".title").html(data.goodsDesc);
+    	$(".product-text .title").html(data.goodsDesc);
     	$(".price").html("￥"+data.goodsPrice);
 
     	
@@ -190,21 +174,69 @@ $(function(){
 	
 	//点击加入购物车，改变购物车的数量
 	//购物车中的数量
+	//点击加入购物车，发送ajax请求，把商品添加到购物车中，并改变小购物车中的数量
 	$(".joingwc").click(function(){
-		//保存数据
-		saveData();
-		
-		nums = parseInt($("#numId").html());
-		$("#numId").html(nums+parseInt($("#goodsNum").val()));
-		//改变购物车的颜色
-		$(".shopnum").css({
-			"background":"#dd00a7"
-		});
-		$(".shopnum").find("i").css({
-			"border-color":"transparent transparent transparent #dd00a7"
-		});
+		$.ajax({
+	        url:'php/addShoppingCart.php',
+	        type: 'get',
+	        dataType: 'json',
+	        data: {
+	            "goodsId": getCookie("goodsid"),
+	            "vipName": getCookie("username"),
+	            "goodsCount": $("#goodsNum").val()
+	        },
+	        success: function(data){
+	             //显示购物车
+	            $.ajax({
+	                type: "get",
+	                url: 'php/getShoppingCart.php',
+	                data: {
+	                    'vipName':getCookie("username")
+	                },
+	                dataType: "json",
+	                success: function(data){
+	                    getPrdNumFormCart(data);
+	                }
+	            });
+	        }
+	    });		
 	}); 
 	
+	//详情页一加载的时候，就发送ajax请求，得到购物车中所有商品的数量，显示在右上角的小购物车中,并且改变小购物车的样式
+	$(function(){
+		$.ajax({
+			type: "get",
+			url: 'php/getShoppingCart.php',
+			data: {
+				'vipName':getCookie("username")
+			},
+			dataType: "json",
+			success: function(data){
+				getPrdNumFormCart(data);
+			}
+		});
+	});
+
+	function getPrdNumFormCart(data){
+		var prdNum = 0;
+		for(let i=0;i<data.length;i++){
+			prdNum += parseInt(data[i].goodsCount);
+		}
+		//console.log(prdNum);
+		$("#numId").html(prdNum);
+
+		//如果商品数量不为0，去改小购物车的样式
+		if(prdNum!=0){
+			//改变购物车的颜色
+			$(".shopnum").css({
+				"background":"#dd00a7"
+			});
+			$(".shopnum").find("i").css({
+				"border-color":"transparent transparent transparent #dd00a7"
+			});
+			$("#carttext").html("去购物车结算");
+		}
+	}
 
 	//根据goodsnum 判断购物车的颜色 
 	if($("#numId").html()>0){
@@ -225,6 +257,4 @@ $(function(){
 	});
 	
 });
-
-
 

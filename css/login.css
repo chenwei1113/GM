@@ -78,6 +78,9 @@
       position: absolute;
       bottom: 18px;
       left: 135px; }
+    .login-box-warp .login-box-left .imgwrap {
+      overflow: hidden;
+      height: 190px; }
     .login-box-warp .login-box-left .imgbox {
       float: left;
       position: absolute;
@@ -91,7 +94,7 @@
       right: 15px;
       width: 137px;
       height: 173px;
-      display: none;
+      opacity: 0;
       background: url(../img/mobile.png) no-repeat; }
     .login-box-warp .login-box-left .firstP {
       padding-top: 15px; }

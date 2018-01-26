@@ -20,9 +20,10 @@ $("#username").blur(function(){
 			$(".errorMsg1").css({"display":"inline-block"});
 			changeRedColor($(".errorMsg1"));
 			changeBorderRedColor($("#username"));
+			$(".rightTip").eq(0).css({"display":"none"});
 		}else {//2.2 验证通过
 			// $(".errorMsg1").css({"display":"none"});
-			
+			$(".rightTip").eq(0).css({"display":"inline-block"});
 			//前台验证通过后，再发送ajax请求
 			$.ajax({
 				url: "php/usercheck.php",
