@@ -91,7 +91,6 @@ function showGoodsinfo(datas){
                     },
                     dataType: "json",
                     success: function(data){
-                        alert("成功加入购物车！");
                         getPrdNumFormCart(data);
                     }
                 });

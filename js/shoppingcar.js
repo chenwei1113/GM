@@ -133,6 +133,10 @@ function showShoppingCartPage(datas){
         }
           
     });
+
+    //修改购物车中商品的数量
+
+
 }
 
 
@@ -191,17 +195,23 @@ function changeNumAndPrice($obj,operator){
     }
     childrens.eq(0).val(numInCar);
     var perPrice = $obj.parent().parent().find($(".perPrice")).html().substring(1);
-    $obj.parent().parent().find($(".sumPrice")).html("￥"+(perPrice*numInCar).toFixed(2));  
+    // console.log(perPrice);
+    // console.log(numInCar);
+    $obj.parent().parent().find($(".sumPrice")).html("￥"+(perPrice*numInCar).toFixed(2));
+  
 }
 
 function changeTotalPrice(){
+
     //改变totalPrice时，先判断checkbox有没有被选中，选中的话，再去计算
+
     let totalPrice = 0;//parseInt($("#totalPrice").html().substring(1));
     $(".prd-container :checkbox").each(function(i){
     	if(this.checked==true){
     		totalPrice += parseInt($(this).siblings(".sumPrice").html().trim().substring(1));
     	}
     });
+    
     $("#totalPrice").html("￥"+totalPrice.toFixed(2));
 }
 

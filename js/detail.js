@@ -1,4 +1,20 @@
-
+//保存数据
+// function saveData(){
+// 	var goodsnum = parseInt($("#numId").html())+parseInt($("#goodsNum").val());
+// 	console.log(goodsnum);
+// 	//添加cookie
+// 	saveCookie("goodsnum",goodsnum,7);
+// }
+//读取数据
+// function getData(){
+// 	var goodsnum = getCookie("goodsnum");
+// 	//判断有没有存入的数据
+// 	if(goodsnum==""){
+// 		return;
+// 	}
+// 	$("#numId").html(goodsnum);
+// 	return goodsnum;
+// }
 
 //浏览最终购买
 function FinalBuy($obj){
@@ -72,7 +88,7 @@ function FinalBuy($obj){
 //入口函数
 $(function(){
 //	页面一加载,就读取cookie的数据
-	getData();
+	//getData();
 	//console.log(getCookie("goodsid")); //可以得到goodsid
 	//页面一加载，发送ajax请求，从数据库中读取数据，并显示
 	$.ajax({
@@ -117,7 +133,7 @@ $(function(){
     		"background-image": 'url(img/'+data.beiyong1+')'
     	});
 
-    	$(".product-text .title").html(data.goodsDesc);
+    	$(".title").html(data.goodsDesc);
     	$(".price").html("￥"+data.goodsPrice);
 
     	

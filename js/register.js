@@ -4,6 +4,7 @@ var regName = /[a-z0-9\u4E00-\u9FFF]{4,20}$/;
 var regPass = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/;
 var regPhone = /^1[34578]\d{9}$/;
 
+//一、用户名的正则验证
 $("#username").blur(function(){
 	let value = $(this).val();
 	//1. 先判断是否为空
@@ -20,10 +21,9 @@ $("#username").blur(function(){
 			$(".errorMsg1").css({"display":"inline-block"});
 			changeRedColor($(".errorMsg1"));
 			changeBorderRedColor($("#username"));
-			$(".rightTip").eq(0).css({"display":"none"});
 		}else {//2.2 验证通过
 			// $(".errorMsg1").css({"display":"none"});
-			$(".rightTip").eq(0).css({"display":"inline-block"});
+			
 			//前台验证通过后，再发送ajax请求
 			$.ajax({
 				url: "php/usercheck.php",
@@ -54,6 +54,7 @@ $("#username").blur(function(){
 
 });
 
+//二、密码框的正则验证
 $("#userpass").blur(function(){
 	let value = $(this).val();
 	//1. 先判断是否为空
@@ -82,7 +83,7 @@ $("#userpass").blur(function(){
 	}
 });
 
-//确认密码
+//三、确认密码
 $(".i-text").eq(2).blur(function(){
 	let value = $(this).val();
 	//1. 先判断是否为空
@@ -108,9 +109,7 @@ $(".i-text").eq(2).blur(function(){
 	}
 });
 
-
-
-
+//四、手机号的正则验证
 $("#phone").blur(function(){
 	let value = $(this).val();
 	//1. 先判断是否为空
@@ -156,3 +155,36 @@ $(".regform").submit(function () {
         return false; //阻止浏览器的默认行为。
     }
 });
+
+//拖动滑块的效果
+//1. 先按下鼠标
+$("#label").mousedown(function(eve){
+	var mouseLeft = eve.offsetX;//鼠标距离事件源左侧的距离
+	//2. 再拖动鼠标
+	$('#slide').on('mousemove',function(eve){
+		//3. 改变滑块的left值
+		var left = eve.pageX - $("#slide").offset().left - mouseLeft;
+		if(left<0){
+			left = 0;
+		}else if(left>=$("#slide").width()-$("#label").width()){
+			left = $("#slide").width()-$("#label").width()
+		}
+		$("#label").css({"left":left});
+		$("#slidebg").css({"width":left});
+	});
+	$('body').on('mouseup',function(){
+		if(parseFloat($("#label").css('left'))<$("#slide").width()-$("#label").width()){
+			$("#label").css('left',0);
+			$("#slidebg").css({"width":0});
+		};
+		$('#slide').off('mousemove');	
+	});
+	return false;
+
+});
+
+// else if(left<$("#slide").width()-$("#label").width()){
+// 			left = 0;
+// 		}
+
+
